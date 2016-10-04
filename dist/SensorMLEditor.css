@@ -512,3 +512,11 @@ table.sml-mode-nolabel-vertical-panel {
 .advanced-title-panel {
 	margin-top:25px;
 }
+
+.tabular-2x{
+	margin-left:5px;
+}
+
+.tabular-4x{
+	margin-left:30px;
+}

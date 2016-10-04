@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<sml:PhysicalSystem gml:id="mvco_workhorse_1200" xml:lang="en"
+   definition="http://sensorml.com/def/sensor/processingSystem"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:gmd="http://www.isotc211.org/2005/gmd"
+   xmlns:gco="http://www.isotc211.org/2005/gco"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:ism="urn:us:gov:ic:ism"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd">
+
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>This is the RDI Workhorse 1200 deployed at 
+            Matha's Vineyard Coastal Observatory.</gml:description>
+   <gml:identifier codeSpace="UniqueID">urn:whoi:mvco:mvco_workhorse_1200</gml:identifier>
+   <gml:name>MVCO_Workhorse_1200</gml:name>
+   <sml:keywords>
+      <sml:KeywordList>
+         <sml:keyword>oceanography</sml:keyword>
+      </sml:KeywordList>
+   </sml:keywords>
+
+ <!--==========================================================-->
+   <!--============        Type Of parent            ============-->
+   <!--==========================================================-->
+   
+   <sml:typeOf xlink:title="urn:teledyne_rdi:workhorse_1200"
+      xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml"/>
+
+
+   <!--==========================================================-->
+   <!--============        ConfigurationSystem Parameters         ============-->
+   <!--==========================================================-->
+   
+   <sml:configuration>
+      <sml:Settings>
+         
+         <sml:setValue ref="parameters/dopplerParameters/operationalDepth"> 50 </sml:setValue>
+         <sml:setValue ref="parameters/dopplerParameters/reportingFrequency"> 20 </sml:setValue>
+         <sml:setValue ref="parameters/dopplerParameters/samplingFrequency"> 2 </sml:setValue>
+         <sml:setValue ref="parameters/dopplerParameters/distanceToFirstBin"> 122 </sml:setValue>
+         <sml:setValue ref="parameters/dopplerParameters/pingInterval"> 0.5 </sml:setValue>
+         <sml:setMode ref="modes/depthOption">depthOption_200m</sml:setMode>
+         
+      </sml:Settings>
+   </sml:configuration>
+</sml:PhysicalSystem>
