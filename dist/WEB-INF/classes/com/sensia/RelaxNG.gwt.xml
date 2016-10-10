@@ -5,5 +5,4 @@
     <inherits name="com.google.gwt.emul.Emulation" />
     <source path="gwt/relaxNG"/> 
     <source path="relaxNG"/> 
-
 </module>
