@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<sml:PhysicalSystem gml:id="teledyne_rdi_adcp_1200" xml:lang="en"
+   definition="http://sensorml.com/def/sensor/observationSystem"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd"
+   xmlns:gco="http://www.isotc211.org/2005/gco"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:ism="urn:us:gov:ic:ism"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd">
+
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+
+   <gml:description>The Monitor is Teledyne RD Instruments
+            most popular direct-reading Acoustic Doppler Current
+            Profiler (ADCP). The unit is typically bottom frame-mounted
+            and hard-wired to shore to provide real-time monitoring
+            of coastal currents. The Monitor's high data accuracy and
+            reliability make it a favorite for deployments in highvolume
+            traffic areas such as ports and harbors, where the
+            data is often integrated into a Vessel Traffic Monitoring
+            System. In fact, the Monitor has been selected for most
+            major port programs undertaken in the United States.</gml:description>
+   <gml:identifier codeSpace="UniqueID">urn:teledyne_rdi:workhorse_1200</gml:identifier>
+   <gml:name>RDI_Workhorse_1200</gml:name>
+   <sml:keywords>
+      <sml:KeywordList>
+         <sml:keyword>oceanography</sml:keyword>
+         <sml:keyword>waves</sml:keyword>
+         <sml:keyword>currents</sml:keyword>
+         <sml:keyword>acoustic Doppler</sml:keyword>
+         <sml:keyword>profiler</sml:keyword>
+      </sml:KeywordList>
+   </sml:keywords>
+
+   <!--==========================================================-->
+   <!--===================System Identifiers=====================-->
+   <!--==========================================================-->
+   <sml:identification>
+      <sml:IdentifierList>
+
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/longName">
+               <sml:label>Long Name</sml:label>
+               <sml:value>Teledyne RDI Workhorse Monitor 1200</sml:value>
+            </sml:Term>
+         </sml:identifier>
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/shortName">
+               <sml:label>Short Name</sml:label>
+               <sml:value>RDI Workhorse</sml:value>
+            </sml:Term>
+         </sml:identifier>
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/manufacturer">
+               <sml:label>Manufacturer</sml:label>
+               <sml:value>Teledyne RDInstruments</sml:value>
+            </sml:Term>
+         </sml:identifier>
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/modelNumber">
+               <sml:label>Model Number</sml:label>
+               <sml:value>Workhorse 1200</sml:value>
+            </sml:Term>
+         </sml:identifier>
+
+      </sml:IdentifierList>
+   </sml:identification>
+
+   <!--==========================================================-->
+   <!--===================System Classifiers=====================-->
+   <!--==========================================================-->
+   <sml:classification>
+      <sml:ClassifierList>
+
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/application">
+               <sml:label>Intended Application</sml:label>
+               <sml:value>Ocean Waves</sml:value>
+            </sml:Term>
+         </sml:classifier>
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/application">
+               <sml:label>Intended Application</sml:label>
+               <sml:value>Ocean Currents</sml:value>
+            </sml:Term>
+         </sml:classifier>
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/sensorType">
+               <sml:label>Sensor Type</sml:label>
+               <sml:value>Acoustic Doppler</sml:value>
+            </sml:Term>
+         </sml:classifier>
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/sensorType">
+               <sml:label>Sensor Type</sml:label>
+               <sml:value>profiler</sml:value>
+            </sml:Term>
+         </sml:classifier>
+
+      </sml:ClassifierList>
+   </sml:classification>
+
+   <!-- ================================================= -->
+   <!--                System Characteristics             -->
+   <!-- ================================================= -->
+   <!-- These are supported by the modes; should either remove here or put allowed values 
+   <sml:characteristics name="generalProperties">
+      <sml:CharacteristicList>
+
+         <sml:characteristic name="physicalProperties">
+
+            <swe:DataRecord definition="http://sensorml.com/ont/swe/property/physicalProperties">
+               <swe:label>Physical Properties</swe:label>
+               <swe:description>Properties are dependent on depth hardware option; values provideer by mode listing for each depth rating</swe:description>
+-->
+               <!-- Pressure Rating -->
+<!--               <swe:field name="pressureRating">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/pressureRating">
+                     <swe:uom code="m"/>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="weightInAir">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/weightInAir">
+                     <swe:uom code="kg"/>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="weightInSeaWater">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/weightInSeaWater">
+                     <swe:uom code="kg"/>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="diameter">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/diameter">
+                     <swe:uom code="mm"/>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="length">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/length ">
+                     <swe:uom code="mm"/>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="transducerMaterial">
+                  <swe:Category definition="http://sensorml.com/ont/swe/property/transducerMaterial"
+                  />
+               </swe:field>
+
+               <swe:field name="housingMaterial">
+                  <swe:Category definition="http://sensorml.com/ont/swe/property/housingMaterial"/>
+               </swe:field>
+
+               <swe:field name="endCapMaterial">
+                  <swe:Category definition="http://sensorml.com/ont/swe/property/endCapMaterial"/>
+               </swe:field>
+
+            </swe:DataRecord>
+         </sml:characteristic>
+
+         <sml:characteristic name="endCapParameters">
+            <swe:DataRecord>
+               <swe:label>End Cap Characteristics</swe:label>
+
+               <swe:field name="endCapConnectorModel">
+                  <swe:Category>
+                     <swe:value>Teledyne Impulse</swe:value>
+                  </swe:Category>
+               </swe:field>
+
+               <swe:field name="endCapConnectorPinNumbers">
+                  <swe:Count>
+                     <swe:value>7</swe:value>
+                  </swe:Count>
+               </swe:field>
+
+               <swe:field name="endCapConnectorDummyPlug">
+                  <swe:Category>
+                     <swe:value>Teledyne Impulse</swe:value>
+                  </swe:Category>
+               </swe:field>
+
+            </swe:DataRecord>
+         </sml:characteristic>
+
+         <sml:characteristic name="cableParameters">
+            <swe:DataRecord>
+               <swe:label>Cable Characteristics</swe:label>
+
+               <swe:field name="cableModel">
+                  <swe:Category>
+                     <swe:value>Teledyne Impulse</swe:value>
+                  </swe:Category>
+               </swe:field>
+
+               <swe:field name="cableLength">
+                  <swe:Quantity definition="">
+                     <swe:uom code="m"/>
+                     <swe:value>5</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+            </swe:DataRecord>
+
+         </sml:characteristic>
+      </sml:CharacteristicList>
+   </sml:characteristics>
+   -->
+
+   <!--==========================================================-->
+   <!--============       System Capabilities       =============-->
+   <!--==========================================================-->
+   <!-- *SF* some of these may need to be replicated/moved to Parameters.  
+            Keep those that are deemed important for discovery -->
+   <sml:capabilities name="dopplerProperties">
+      <sml:CapabilityList>
+         <sml:capability name="beamProperties">
+
+
+            <swe:DataRecord>
+
+               <swe:field name="beamFrequency">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/beamFrequency">
+                     <swe:uom code="Hz"/>
+                     <swe:value>1228800</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="bandwidth">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/bandwidth">
+                     <swe:uom code="Hz"/>
+                     <swe:value>307200</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="beamAngle">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/beamAngle">
+                     <swe:uom code="deg"/>
+                     <swe:value>20</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="DepthCell">
+                  <!-- or bin, same as Vertical res -->
+                  <swe:QuantityRange definition="http://mmisw.org/ont/trdi/glossary/depthCell">
+                     <swe:uom code="cm"/>
+                     <swe:value>5 1600</swe:value>
+                  </swe:QuantityRange>
+               </swe:field>
+
+               <swe:field name="ExpectedVelocityVectorAccuracy">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/expectedVelocityVectorAccuracy">
+                     <swe:uom code="cm/s"/>
+                     <swe:value>2</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="ExpectedDirectionAccuracy">
+                  <swe:Quantity
+                     definition="http://mmisw.org/ont/trdi/glossary/expectedDirectionAccuracy">
+                     <swe:uom code="deg"/>
+                     <swe:value>3</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="VelocityVectorResolution">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/VelocityVectorResolution">
+                     <swe:uom code="cm/s"/>
+                     <swe:value>.1</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="DirectionResolution">
+                  <swe:Quantity
+                     definition="http://mmisw.org/ont/trdi/glossary/directionalResolution">
+                     <swe:uom code="deg"/>
+                     <swe:value>.1</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="SpeedRange">
+                  <swe:QuantityRange definition="http://mmisw.org/ont/trdi/glossary/speedRange">
+                     <swe:uom code="m/s"/>
+                     <swe:value>-5 +5</swe:value>
+                  </swe:QuantityRange>
+               </swe:field>
+
+            </swe:DataRecord>
+         </sml:capability>
+      </sml:CapabilityList>
+
+   </sml:capabilities>
+
+   <!--==========================================================-->
+   <!--============       System Contacts           =============-->
+   <!--==========================================================-->
+   
+   <sml:contacts>
+      <sml:ContactList>
+         
+         <!-- Sales Office -->
+         <sml:contact xlink:arcrole="http://sensorml.com/def/role/Sales">
+            <gmd:CI_ResponsibleParty>
+               <gmd:organisationName>
+                  <gco:CharacterString>Teledyne RD Instruments</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice>
+                              <gco:CharacterString>+1-858-842-2600</gco:CharacterString>
+                           </gmd:voice>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                            <gmd:deliveryPoint>
+                              <gco:CharacterString>
+                                 14020 Stowe Drive
+                              </gco:CharacterString>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>Poway</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:administrativeArea>
+                              <gco:CharacterString>CA</gco:CharacterString>
+                           </gmd:administrativeArea>
+                           <gmd:postalCode>
+                              <gco:CharacterString>92064</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country>
+                              <gco:CharacterString>USA</gco:CharacterString>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>rdisales@teledyne.com</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role gco:nilReason="inapplicable"/>
+            </gmd:CI_ResponsibleParty>
+         </sml:contact>
+         
+         <!-- Expert -->
+         <sml:contact xlink:arcrole="http://sensorml.com/def/role/expert">
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName>
+                  <gco:CharacterString>Darryl Symonds</gco:CharacterString>
+               </gmd:individualName>
+               <gmd:organisationName>
+                  <gco:CharacterString>Teledyne RD Instruments</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice>
+                              <gco:CharacterString>+1-858-842-2644</gco:CharacterString>
+                           </gmd:voice>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>dsymonds@teledyne.com</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role gco:nilReason="inapplicable"/>
+            </gmd:CI_ResponsibleParty>
+         </sml:contact>
+         
+      </sml:ContactList>
+   </sml:contacts>
+ 
+   <!--==========================================================-->
+   <!--============       System Documentation       ============-->
+   <!--==========================================================-->
+   <sml:documentation>
+      <sml:DocumentList>
+ 
+         <!-- Data Sheet -->   
+         <sml:document xlink:arcrole="http://sensorml.com/ont/swe/role/dataSheet">
+            <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                  <gmd:URL>http://rdinstruments.com/__documents/Brochures/monitor_datasheet_lr.pdf</gmd:URL>
+               </gmd:linkage>
+               <gmd:description>
+                  <gco:CharacterString>Datasheet for the workhorse</gco:CharacterString>
+               </gmd:description>
+            </gmd:CI_OnlineResource>
+         </sml:document>
+         
+         <!-- Operations Manual -->
+         <sml:document xlink:arcrole="http://sensorml.com/ont/swe/role/operationsManual">
+            <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                  <gmd:URL>http://www.rdinstruments.com/support/documentation</gmd:URL>
+               </gmd:linkage>
+               <gmd:description>
+                  <gco:CharacterString>Collection of information regarding Teldyne RDI's ADCP profilers</gco:CharacterString>
+               </gmd:description>
+            </gmd:CI_OnlineResource>
+         </sml:document>
+         
+         <!-- Photo -->   
+         <sml:document xlink:arcrole="http://sensorml.com/ont/swe/role/photo">
+            <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                  <gmd:URL>http://www.rdinstruments.com/monitor.html</gmd:URL>
+               </gmd:linkage>
+               <gmd:description>
+                  <gco:CharacterString>Photos of the workhorse</gco:CharacterString>
+               </gmd:description>
+            </gmd:CI_OnlineResource>
+         </sml:document>
+        
+      </sml:DocumentList>
+   </sml:documentation>
+
+   
+   <!--========================-->
+   <!--  Profiler Inputs -->
+   <!--========================-->
+   <sml:inputs>
+      <sml:InputList>
+
+         <sml:input name="seaWaterPressure">
+            <sml:ObservableProperty
+               definition="http://mmisw.org/ont/mvco/observableProperty/seaWaterPressure">
+               <swe:label>Sea Water Pressure</swe:label>
+            </sml:ObservableProperty>
+         </sml:input>
+         <sml:input name="seaWaterTemperature">
+            <sml:ObservableProperty
+               definition="http://mmisw.org/ont/mvco/observableProperty/seaWaterTemperature">
+               <swe:label>Sea Water Temperature</swe:label>
+            </sml:ObservableProperty>
+         </sml:input>
+         <sml:input name="volumetricBackscatter">
+            <sml:ObservableProperty
+               definition="http://mmisw.org/ont/mvco/observableProperty/volumetricBackscatter">
+               <swe:label>Volumetric Backscatter</swe:label>
+               <swe:description>doppler backscatter</swe:description>
+            </sml:ObservableProperty>
+         </sml:input>
+         <sml:input name="particleMotion">
+            <sml:ObservableProperty
+               definition="http://mmisw.org/ont/mvco/observableProperty/particleMotion">
+               <swe:label>Particle Motion</swe:label>
+            </sml:ObservableProperty>
+         </sml:input>
+      </sml:InputList>
+   </sml:inputs>
+
+   <!--==============================-->
+   <!--      Profiler Outputs        -->
+   <!--==============================-->
+   <sml:outputs>
+      <sml:OutputList>
+
+         <sml:output name="ADCP_outputs">
+            <swe:DataRecord>
+               <swe:field name="pressure">
+                  <swe:Quantity definition="http://mmisw.org/ont/mvco/seaWaterPressure">
+                     <swe:uom code="dbar"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="temperature">
+                  <swe:Quantity definition="http://mmisw.org/ont/mvco/seaWaterTemperature">
+                     <swe:uom code="cel"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="velocity">
+                  <swe:Quantity definition="http://mmisw.org/ont/mvco/waveVelocity">
+                     <swe:uom code="mm/s"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="beamIntensity">
+                  <swe:Quantity definition="http://mmisw.org/ont/mvco/beamIntensity">
+                     <!-- TODO check that intensity is candela -->
+                     <swe:uom code="cd"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="correlationCoefficient">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/correlationCoefficient">
+                     <!-- TODO: check uom for Correlation Coefficient -->
+                     <swe:uom code="1"/>
+                  </swe:Quantity>
+               </swe:field>
+
+            </swe:DataRecord>
+         </sml:output>
+
+      </sml:OutputList>
+   </sml:outputs>
+
+   <!--=======================-->
+   <!-- Profiler Parameters   -->
+   <!--=======================-->
+   <!-- *SF*  These need to be moved to One of the instrument docs?? -->
+   <!-- *SF*  Question about where blankingDistance, etc. should be defined.  
+            They are settable, but we need to know what settings they have (from the instrument) -->
+   <sml:parameters>
+      <sml:ParameterList>
+         <sml:parameter name="dopplerParameters">
+            <swe:DataRecord>
+               <swe:field name="operationalDepth">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/depthRating">
+                     <swe:label>Depth Operation Rating</swe:label>
+                      <swe:uom code="m"/>
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:value>200</swe:value>
+                           <swe:value>500</swe:value>
+                           <swe:value>1000</swe:value>
+                           <swe:value>6000</swe:value>
+                        </swe:AllowedValues>
+                     </swe:constraint>
+                  </swe:Quantity>
+               </swe:field>
+               
+
+               <swe:field name="samplingFrequency">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/samplingFrequency">
+                     <swe:description>Sampling Frequency of Workhorse</swe:description>
+                     <swe:uom code="Hz"/>
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:interval>1 5</swe:interval>
+                        </swe:AllowedValues>
+                     </swe:constraint>
+                     <swe:value>2</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+               <!-- TODO:  find out allowed values -->
+               <swe:field name="reportingFrequency">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/reportingFrequency">
+                     <swe:description>Reporting Frequency of Workhorse</swe:description>
+                     <swe:uom code="min"/>
+                     <!-- find constraint values 
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:interval> </swe:interval>
+                        </swe:AllowedValues>
+                     </swe:constraint>
+                     -->
+                     <swe:value>2</swe:value>
+                  </swe:Quantity>
+               </swe:field>
+
+
+               <swe:field name="numberOfDepthCells">
+                  <swe:Count definition="http://mmisw.org/ont/trdi/glossary/numberOfDepthCells">
+                     <swe:description>Number of Depth cells</swe:description>
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:interval>1 128</swe:interval>
+                        </swe:AllowedValues>
+                     </swe:constraint>
+                  </swe:Count>
+               </swe:field>
+
+               <swe:field name="depthCellSize">
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/depthCellSize">
+                     <swe:description>Cell size</swe:description>
+                     <swe:uom code="m"/>
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:interval>.05 4</swe:interval>
+                         </swe:AllowedValues>
+                     </swe:constraint>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="numberOfPings">
+                  <swe:Count definition="http://mmisw.org/ont/trdi/glossary/numberOfPings">
+                     <swe:description>Number of pings per ensemble</swe:description>
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:interval>1 16384</swe:interval>
+                        </swe:AllowedValues>
+                     </swe:constraint>
+                  </swe:Count>
+               </swe:field>
+
+               <swe:field name="blankingDistance">
+                  <!-- Adding blankingDistance, in addition to distanceToFirstBin -->
+                  <swe:QuantityRange
+                     definition="http://mmisw.org/ont/trdi/glossary/blankingDistance">
+                     <swe:uom code="cm"/>
+                     <swe:value>30 800</swe:value>
+                  </swe:QuantityRange>
+               </swe:field>
+
+               <swe:field name="distanceToFirstBin">
+                  <swe:QuantityRange
+                     definition="http://mmisw.org/ont/trdi/glossary/distanceToFirstBin">
+                     <swe:uom code="cm"/>
+                     <swe:value>0 65535</swe:value>
+                  </swe:QuantityRange>
+               </swe:field>
+
+               <swe:field name="pingInterval">
+                  <!-- TP command -->
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/pingInterval">
+                     <swe:description>ping Interval</swe:description>
+                     <swe:uom code="s"/>
+                     <!-- minutesSecs.hundredsSecs  -->
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:interval>0 3599.99</swe:interval>
+                        </swe:AllowedValues>
+                     </swe:constraint>
+                  </swe:Quantity>
+               </swe:field>
+
+               <swe:field name="ensembleInterval">
+                  <!-- TP command -->
+                  <swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/pingInterval">
+                     <swe:description>ping Interval</swe:description>
+                     <swe:uom code="s"/>
+                     <!-- hrsMinutesSecs.hundredsSecs  -->
+                     <swe:constraint>
+                        <swe:AllowedValues>
+                           <swe:interval>0 86399.99</swe:interval>
+                        </swe:AllowedValues>
+                     </swe:constraint>
+                  </swe:Quantity>
+               </swe:field>
+
+            </swe:DataRecord>
+         </sml:parameter>
+
+         <sml:parameter name="CommunicationsParameters">
+            <swe:DataRecord>
+               <swe:field name="communicationsType">
+                  <swe:Category>
+                  <swe:constraint>
+                    <swe:AllowedTokens>
+                       <swe:value>RS232</swe:value>
+                       <swe:value>RS422</swe:value>
+                    </swe:AllowedTokens>
+                  </swe:constraint>
+                  </swe:Category>
+               </swe:field>
+
+               <swe:field name="communicationBaudRate">
+                <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/baudRate">
+                   <swe:uom code="bd"/>
+                   <swe:constraint>
+                      <swe:AllowedValues>
+                         <swe:interval>100 200000</swe:interval>
+                      </swe:AllowedValues>
+                   </swe:constraint>
+                   <swe:value>1200 115200</swe:value>
+                </swe:QuantityRange>
+               </swe:field>
+
+            </swe:DataRecord>
+         </sml:parameter>
+
+      </sml:ParameterList>
+   </sml:parameters>
+
+   <!--=======================-->
+   <!-- Hardware Modes   -->
+   <!--=======================-->
+   <sml:modes>
+      <sml:ModeChoice id="depthOption">
+         
+         <!--  200m depth option -->
+         <sml:mode>
+            <sml:Mode gml:id="depthOption_200m">
+               <sml:characteristics name="depthOptionCharacteristics">
+                  <sml:CharacteristicList>
+                     <sml:characteristic name="physicalProperties">
+
+                        <swe:DataRecord
+                           definition="http://sensorml.com/ont/swe/property/physicalProperties">
+                           <swe:label>Physical Properties</swe:label>
+                           <swe:description>Properties are dependent on depth hardware option; values provided by mode listing for each depth rating</swe:description>
+
+                           <!-- Pressure Rating -->
+                           <swe:field name="pressureRating">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/pressureRating">
+                                 <swe:uom code="m"/>
+                                 <swe:value>200</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+
+                           <swe:field name="weightInAir">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInAir">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>7.0</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+
+                           <swe:field name="weightInSeaWater">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInSeaWater">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>3.0</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+
+                           <swe:field name="diameter">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/diameter">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>228.0</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+
+                           <swe:field name="length">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/length ">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>201.5</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+
+                           <swe:field name="transducerMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/transducerMaterial">
+                                 <swe:value>plastic</swe:value>
+                              </swe:Category>
+                           </swe:field>
+
+                           <swe:field name="housingMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/housingMaterial">
+                                 <swe:value>plastic</swe:value>
+                              </swe:Category>
+                           </swe:field>
+
+                           <swe:field name="endCapMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/endCapMaterial">
+                                 <swe:value>plastic</swe:value>
+                              </swe:Category>
+                           </swe:field>
+
+                        </swe:DataRecord>
+                     </sml:characteristic>
+                  </sml:CharacteristicList>
+               </sml:characteristics>
+
+               <sml:configuration>
+                  <sml:Settings>
+                     <sml:setValue ref="this/parameters/dopplerParameters/operationalDepth">200</sml:setValue>
+                  </sml:Settings>
+               </sml:configuration>
+            </sml:Mode>
+         </sml:mode>
+
+         <!--  500m depth option -->
+         <sml:mode>
+            <sml:Mode gml:id="depthOption_500m">
+               <sml:characteristics name="depthOptionCharacteristics">
+                  <sml:CharacteristicList>
+                     <sml:characteristic name="physicalProperties">
+                        
+                        <swe:DataRecord
+                           definition="http://sensorml.com/ont/swe/property/physicalProperties">
+                           <swe:label>Physical Properties</swe:label>
+                           <swe:description>Properties are dependent on depth hardware option; values provided by mode listing for each depth rating</swe:description>
+                           
+                           <!-- Pressure Rating -->
+                           <swe:field name="pressureRating">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/pressureRating">
+                                 <swe:uom code="m"/>
+                                 <swe:value>500</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="weightInAir">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInAir">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>9.8</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="weightInSeaWater">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInSeaWater">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>3.5</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="diameter">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/diameter">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>228.0</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="length">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/length ">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>201.5</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="transducerMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/transducerMaterial">
+                                 <swe:value>plastic</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                           <swe:field name="housingMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/housingMaterial">
+                                 <swe:value>6061 Aluminum</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                           <swe:field name="endCapMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/endCapMaterial">
+                                 <swe:value>plastic</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                        </swe:DataRecord>
+                     </sml:characteristic>
+                  </sml:CharacteristicList>
+               </sml:characteristics>
+               
+               <sml:configuration>
+                  <sml:Settings>
+                     <sml:setValue ref="this/parameters/dopplerParameters/operationalDepth">500</sml:setValue>
+                  </sml:Settings>
+               </sml:configuration>
+            </sml:Mode>
+         </sml:mode>
+         
+         <!--  10000m depth option -->
+         <sml:mode>
+            <sml:Mode gml:id="depthOption_1000m">
+               <sml:characteristics name="depthOptionCharacteristics">
+                  <sml:CharacteristicList>
+                     <sml:characteristic name="physicalProperties">
+                        
+                        <swe:DataRecord
+                           definition="http://sensorml.com/ont/swe/property/physicalProperties">
+                           <swe:label>Physical Properties</swe:label>
+                           <swe:description>Properties are dependent on depth hardware option; values provided by mode listing for each depth rating</swe:description>
+                           
+                           <!-- Pressure Rating -->
+                           <swe:field name="pressureRating">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/pressureRating">
+                                 <swe:uom code="m"/>
+                                 <swe:value>1000</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="weightInAir">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInAir">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>12.7</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="weightInSeaWater">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInSeaWater">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>5.5</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="diameter">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/diameter">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>225.0</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="length">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/length ">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>237.5</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="transducerMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/transducerMaterial">
+                                 <swe:value>6061 Aluminum</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                           <swe:field name="housingMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/housingMaterial">
+                                 <swe:value>6061 Aluminum</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                           <swe:field name="endCapMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/endCapMaterial">
+                                 <swe:value>6061 Aluminum</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                        </swe:DataRecord>
+                     </sml:characteristic>
+                  </sml:CharacteristicList>
+               </sml:characteristics>
+               
+               <sml:configuration>
+                  <sml:Settings>
+                     <sml:setValue ref="this/parameters/dopplerParameters/operationalDepth">1000</sml:setValue>
+                  </sml:Settings>
+               </sml:configuration>
+            </sml:Mode>
+         </sml:mode>
+         
+         <!--  6000m depth option -->
+         <sml:mode>
+            <sml:Mode gml:id="depthOption_6000m">
+               <sml:characteristics name="depthOptionCharacteristics">
+                  <sml:CharacteristicList>
+                     <sml:characteristic name="physicalProperties">
+                        
+                        <swe:DataRecord
+                           definition="http://sensorml.com/ont/swe/property/physicalProperties">
+                           <swe:label>Physical Properties</swe:label>
+                           <swe:description>Properties are dependent on depth hardware option; values provided by mode listing for each depth rating</swe:description>
+                           
+                           <!-- Pressure Rating -->
+                           <swe:field name="pressureRating">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/pressureRating">
+                                 <swe:uom code="m"/>
+                                 <swe:value>6000</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="weightInAir">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInAir">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>15.5</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="weightInSeaWater">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/weightInSeaWater">
+                                 <swe:uom code="kg"/>
+                                 <swe:value>5.6</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="diameter">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/diameter">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>225.0</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="length">
+                              <swe:Quantity
+                                 definition="http://sensorml.com/ont/swe/property/length ">
+                                 <swe:uom code="mm"/>
+                                 <swe:value>228.6</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                           
+                           <swe:field name="transducerMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/transducerMaterial">
+                                 <swe:value>7075 Aluminum</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                           <swe:field name="housingMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/housingMaterial">
+                                 <swe:value>7075 Aluminum</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                           <swe:field name="endCapMaterial">
+                              <swe:Category
+                                 definition="http://sensorml.com/ont/swe/property/endCapMaterial">
+                                 <swe:value>7075 Aluminum</swe:value>
+                              </swe:Category>
+                           </swe:field>
+                           
+                        </swe:DataRecord>
+                     </sml:characteristic>
+                  </sml:CharacteristicList>
+               </sml:characteristics>
+               
+               <sml:configuration>
+                  <sml:Settings>
+                     <sml:setValue ref="this/parameters/dopplerParameters/operationalDepth">6000</sml:setValue>
+                  </sml:Settings>
+               </sml:configuration>
+            </sml:Mode>
+         </sml:mode>
+         
+      </sml:ModeChoice>
+   </sml:modes>
+   
+   <!--============================-->
+   <!-- Platform Coordinate Frame  -->
+   <!--============================-->
+   <sml:localReferenceFrame>
+      <sml:SpatialFrame id="PLATFORM_FRAME">
+         <sml:origin>
+            Origin is at the intersection of the symmetric axis of the cylinder and the rear of the sensor
+         </sml:origin>
+         <sml:axis name="X">
+            X is perdendicular to the symmetric axis and intersects the indicator on the casing
+         </sml:axis>
+         <sml:axis name="Y">Y = Z cross X</sml:axis>
+         <sml:axis name="Z">
+            Z is along the symmetric axis of the sensor in the "up" direction
+         </sml:axis>
+      </sml:SpatialFrame>
+   </sml:localReferenceFrame>
+   
+
+   <!--=======================-->
+   <!-- Profiler Components   -->
+   <!--=======================-->
+   <sml:components>
+      <sml:ComponentList>
+                       
+         <sml:component name="transducer">
+            <sml:PhysicalComponent gml:id="Transducer">
+               <gml:identifier codeSpace="uniqueID">urn:teledyne_rdi:workhorse_1200:transducer</gml:identifier>
+               <gml:name>RDI ADCP Doppler Transducer</gml:name>
+            </sml:PhysicalComponent>
+         </sml:component>
+
+         <sml:component name="PressureSensor">
+            <sml:PhysicalComponent gml:id="PressureSensor">
+               <gml:identifier codeSpace="uniqueID">urn:teledyne_rdi:workhorse_1200:pressureSensor</gml:identifier>
+               <gml:name>RDI ADCP Pressure Sensor</gml:name>
+            </sml:PhysicalComponent>
+         </sml:component>
+
+         <sml:component name="TemperatureSensor">
+            <sml:PhysicalComponent gml:id="TemperatureSensor">
+               <gml:identifier codeSpace="uniqueID">urn:teledyne_rdi:workhorse_1200:temperatureSensor</gml:identifier>
+               <gml:name>RDI ADCP Temperature Sensor</gml:name>
+               
+               <sml:parameters>
+                  <sml:ParameterList>
+                     <sml:parameter name="Range">
+                        <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/range">
+                           <swe:uom code="deg"/>
+                           <swe:value>-5 45</swe:value>
+                        </swe:QuantityRange>
+                     </sml:parameter>
+                     <sml:parameter name="Accuracy">
+                        <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/accuracy">
+                           <swe:uom code="deg"/>
+                           <swe:value>-0.4 0.4</swe:value>
+                        </swe:QuantityRange>
+                     </sml:parameter>
+                     <sml:parameter name="Resolution">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/resolution">
+                           <swe:uom code="deg"/>
+                           <swe:value>.01</swe:value>
+                        </swe:Quantity>
+                     </sml:parameter>
+                  </sml:ParameterList>
+               </sml:parameters>
+
+            </sml:PhysicalComponent>
+         </sml:component>
+
+         <sml:component name="TiltSensor">
+            <sml:PhysicalComponent gml:id="TiltSensor">
+               <gml:identifier codeSpace="uniqueID">urn:teledyne_rdi:workhorse_1200:tiltSensor</gml:identifier>
+               <gml:name>RDI ADCP Tilt Sensor</gml:name>
+               <sml:parameters>
+                  <sml:ParameterList>
+
+                     <sml:parameter name="Pitch">
+                        <swe:DataRecord>
+                           <swe:field name="Range">
+                              <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/range">
+                                 <swe:description>An upgrade option of +/-40 degrees is possible</swe:description>
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>-20 20</swe:value>
+                              </swe:QuantityRange>
+                           </swe:field>
+                           <swe:field name="Accuracy">
+                              <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/accuracy">
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>-1 1</swe:value>
+                              </swe:QuantityRange>
+                           </swe:field>
+                           <swe:field name="Resolution">
+                              <swe:Quantity definition="http://sensorml.com/ont/swe/property/resolution">
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>0.1</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                        </swe:DataRecord>
+                     </sml:parameter>
+
+                     <sml:parameter name="Roll">
+                        <swe:DataRecord>
+                           <swe:field name="Range">
+                              <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/range">
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>-20 20</swe:value>
+                              </swe:QuantityRange>
+                           </swe:field>
+                           <swe:field name="Accuracy">
+                              <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/accuracy">
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>-1 1</swe:value>
+                              </swe:QuantityRange>
+                           </swe:field>
+                           <swe:field name="Resolution">
+                              <swe:Quantity definition="http://sensorml.com/ont/swe/property/resolution">
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>0.1</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                        </swe:DataRecord>
+                     </sml:parameter>
+
+                  </sml:ParameterList>
+               </sml:parameters>
+            </sml:PhysicalComponent>
+         </sml:component>
+
+         <sml:component name="Compass">
+            <sml:PhysicalComponent gml:id="Compass">
+               <gml:identifier codeSpace="uniqueID">urn:teledyne_rdi:workhorse_1200:compass</gml:identifier>
+               <gml:name>RDI ADCP Flux Gate Compass</gml:name>
+               <sml:parameters>
+                  <sml:ParameterList>
+
+                     <sml:parameter name="Heading">
+                        <swe:DataRecord>
+                           <swe:field name="Range">
+                              <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/range">
+                                 <swe:description>Accuracy assumes field calibration is performed</swe:description>
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>0 360</swe:value>
+                              </swe:QuantityRange>
+                           </swe:field>
+                           <swe:field name="Accuracy">
+                              <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/accuracy">
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>-2 2</swe:value>
+                              </swe:QuantityRange>
+                           </swe:field>
+                           <swe:field name="Resolution">
+                              <swe:Quantity definition="http://sensorml.com/ont/swe/property/resolution">
+                                 <swe:uom code="degrees"/>
+                                 <swe:value>0.1</swe:value>
+                              </swe:Quantity>
+                           </swe:field>
+                        </swe:DataRecord>
+                     </sml:parameter>
+                  </sml:ParameterList>
+               </sml:parameters>
+            </sml:PhysicalComponent>
+         </sml:component>
+
+      </sml:ComponentList>
+
+   </sml:components>
+   <!--==============================-->
+   <!--      System Connections      -->
+   <!--==============================-->
+</sml:PhysicalSystem>

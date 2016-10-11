@@ -33,13 +33,13 @@
 }
 
 .gwt-DecoratedTabBar .tabTopLeft {
-  background: url(images/circles.png) no-repeat 0px 0px;
-  -background: url(images/circles_ie6.png) no-repeat 0px 0px;
+  background: url(sensormleditor/images/circles.png) no-repeat 0px 0px;
+  -background: url(sensormleditor/images/circles_ie6.png) no-repeat 0px 0px;
 }
 
 .gwt-DecoratedTabBar .tabTopRight {
-  background: url(images/circles.png) no-repeat -3px 0px;
-  -background: url(images/circles_ie6.png) no-repeat -3px 0px;
+  background: url(sensormleditor/images/circles.png) no-repeat -3px 0px;
+  -background: url(sensormleditor/images/circles_ie6.png) no-repeat -3px 0px;
 }
 
 .gwt-DecoratedTabBar .tabMiddleLeft,
@@ -70,13 +70,13 @@
 }
 
 .gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopLeft {
-  background: url(images/circles.png) no-repeat -6px 0px;
-  -background: url(images/circles_ie6.png) no-repeat -6px 0px;
+  background: url(sensormleditor/images/circles.png) no-repeat -6px 0px;
+  -background: url(sensormleditor/images/circles_ie6.png) no-repeat -6px 0px;
 }
 
 .gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopRight {
-  background: url(images/circles.png) no-repeat -9px 0px;
-  -background: url(images/circles_ie6.png) no-repeat -9px 0px;
+  background: url(sensormleditor/images/circles.png) no-repeat -9px 0px;
+  -background: url(sensormleditor/images/circles_ie6.png) no-repeat -9px 0px;
 }
 
 .gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleLeft,
@@ -137,19 +137,13 @@ html>body .gwt-DecoratedTabBar {
   padding-left: 18px;
 }
 	
-.gwt-DisclosurePanel-open a.header {
-  background-image: url(images/hide_section.png);
-}
-
-.gwt-DisclosurePanel-closed a.header {
-  background-image: url(images/show_section.png);
-}
-
 .gwt-disclosurepanel .content {
-  border-left: 0px;
+  border-left: 29px !important;
   padding: 0px;
   margin-left: 0px;
   margin-top: 5px;
+  border-left: 2px solid #e7e7e7 !important;
+  
 }
 
 .gwt-TextBox {
@@ -180,7 +174,7 @@ html>body .gwt-DecoratedTabBar {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  background-image: url(images/change.gif);
+  background-image: url(sensormleditor/images/change.gif);
   cursor: hand;
   cursor: pointer;
   margin-top: 2px;
@@ -192,19 +186,29 @@ html>body .gwt-DecoratedTabBar {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  background-image: url(images/add.gif);
+  background-image: url(sensormleditor/images/add.gif);
   cursor: hand;
   cursor: pointer;
   margin-top: 1px;
-  margin-bottom: 5px;
-  margin-right: 5px;
+  /*margin-bottom: 5px;
+  margin-right: 5px;*/
 }
 
+.rng-advanced-button {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url(sensormleditor/images/advanced.png);
+  cursor: hand;
+  cursor: pointer;
+}
+  
 .rng-optional-unselect {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  background-image: url(images/remove.gif);
+  background-image: url(sensormleditor/images/remove.gif);
   cursor: hand;
   cursor: pointer;
   margin-top: 2px;
@@ -232,6 +236,44 @@ html>body .gwt-DecoratedTabBar {
   margin-right: 10px;
 }
 
+.swe-section-panel {
+	margin-left:-20px;
+	margin-bottom:20px;
+}
+
+.swe-property-panel {
+	margin-left:35px !important;
+}
+
+.sml-mode-panel {
+	margin-left:-30px;
+	border-left:none !important;
+	margin-bottom:15px;
+}
+
+.sml-mode-inner-panel {
+	margin-left:35px !important;
+	border-left:none !important;
+	margin-bottom:15px;
+	margin-top: -6px !important;
+}
+
+.gwt-DisclosurePanel .content .sml-mode-inner-panel{
+	border-left:none !important;
+}
+
+.gwt-DisclosurePanel .content .sml-mode-panel{
+	border-left:none !important;
+}
+
+.sml-mode-title {
+  font-weight:bold;
+}
+
+.sml-mode-panel {
+	
+}
+
 .swe-object-type {
   background-attachment: initial;
   background-origin: initial;
@@ -239,7 +281,7 @@ html>body .gwt-DecoratedTabBar {
   background-color: initial;
   background-position: 0px 1px;
   background-repeat: no-repeat;
-  background-image: url(images/obj.gif);
+  background-image: url(sensormleditor/images/obj.gif);
   padding-left: 21px;
   margin-bottom: 5px;  
 }
@@ -251,7 +293,231 @@ html>body .gwt-DecoratedTabBar {
   background-color: initial;
   background-position: 1px 1px;
   background-repeat: no-repeat;
-  background-image: url(images/bullet.gif);
+  background-image: url(sensormleditor/images/bullet.gif);
   padding-left: 21px;
   margin-bottom: 5px;
+}
+
+table.gwt-DisclosurePanel-closed>tbody>tr>td> a.header {
+	background-image: none ;
+}
+
+table.gwt-DisclosurePanel-open>tbody>tr>td> a.header {
+	background-image: none ;
+}
+
+/*.gwt-DisclosurePanel-open .swe-property-panel a.header {
+  background-image: url(sensormleditor/images/show_section.png) !important;;
+}
+
+.gwt-DisclosurePanel-closed .swe-property-panel a.header {
+  background-image: url(sensormleditor/images/show_section.png) !important;;
+}*/
+
+/* Center the definition image */
+.sml-attribute-definition {
+	vertical-align: middle;
+}
+
+td, th  {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    /*align : right !important;
+    text-align: right !important;*/
+}
+
+.font-bold { 
+	font-weight: bold; 
+}
+
+.data-table {
+	margin-left:35px;
+}
+
+.data-table-header {
+    border-bottom: 1px solid #000000 !important;
+    padding: 3px 15px;
+    text-align: center !important; 
+    color: #000000 !important; 
+    text-shadow: none !important;
+    overflow: hidden;
+}
+
+table.advanced-panel {
+	border-spacing: 10px;
+	padding: 5px;
+}
+
+table.sub-address-panel {
+	border-spacing: 10px;
+	margin-left : -10px;
+}
+
+.sub-address-country-separator {
+	margin-left : -15px;
+}
+
+/*left justify the Specification name */
+td div.document-title {
+	text-align:left;
+	margin-top:35px;
+}
+
+.document-title {
+	padding : 20 0 0 0;
+}
+
+td div.document-title-inner {
+	text-align:left;
+	margin-top:2px;
+}
+
+.document-title-inner {
+	padding : 5 0 0 0;
+}
+
+.sections-line-title-separator-inner {
+	margin-top:-25px;
+}
+
+.sections-line-description-separator-inner {
+	margin-top:-12px;
+}
+
+.sections-description-inner {
+	margin-top:-20px;
+}
+
+.icon-def-section-header {
+	margin-top:2px;
+}
+
+.graphic-icon {
+	margin-left:10px;
+}
+
+.graph-dataarray-panel {
+	width : 800px;
+}
+
+.table-dataarray-panel {
+	width : 600px;
+}
+
+.swe-dataRecord-vertical-panel {
+	padding : 5 0 5 10;
+	border-spacing: 10px;
+}
+
+.sml-mode-vertical-panel {
+	padding : 5 0 5 10;
+}
+
+.line-generic-label-panel {
+	width : 225px;
+}
+
+.def-generic-label-panel {
+	width : 35px;
+}
+
+table.swe-generic-vertical-panel {
+	padding : 0 0 10 15 !important;
+	border-spacing: 10px !important;
+	margin-top: -5px;
+}
+
+table.swe-dataRecord-nolabel-vertical-panel {
+	border-spacing: 10px !important;
+	margin-left:-10px;
+}
+
+table.sml-mode-nolabel-vertical-panel {
+	border-spacing: 10px !important;
+	margin-left:-10px;
+}
+
+.ontology-table-result {
+	height: 100px;
+	width : 768px;
+	margin-top:25px;
+	border-width:1px; 
+ 	border-style:solid; 
+ 	border-color:black;
+ 	border-collapse:collapse;
+}
+
+.ontology-sourcesBox {
+	margin-right:35px;
+}
+
+.ontology-table-panel {
+	height:475px;	
+	width: 800px;
+}
+
+.edit-table-panel {
+	max-height:550px;
+	overflow:overlay !important;
+}
+
+.chart-panel {
+	height:490px;	
+	width: 790px;
+	margin-top:10px;
+	margin-left:10px;
+}
+.ontology-icon {
+	margin-left: 15px;	
+}
+
+.file-upload {
+	width:300px; 	
+	border-radius: 0px 10px 10px 0px;
+	-moz-border-radius: 0px 10px 10px 0px;
+	-webkit-border-radius: 0px 10px 10px 0px;
+	border: 1px solid #c4b29d;
+}
+
+.file-download {
+	width:300px; 	
+	border: 1px solid #c4b29d;
+}
+
+.link-icon-panel {
+	background-image: url(sensormleditor/images/arrow-right.png) !important;
+	width:25px;
+	height:7px;
+	margin-top:2px;
+	margin-right:5px;
+}
+
+.xlink {
+	margin-right:5px;
+}
+
+.def-icon {
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.map-icon {
+	margin-left:10px;
+}
+
+.constraint-values {
+	font-style: italic;
+}
+
+.advanced-title-panel {
+	margin-top:25px;
+}
+
+.tabular-2x{
+	margin-left:5px;
+}
+
+.tabular-4x{
+	margin-top:10px;
+	margin-bottom:10px;
 }

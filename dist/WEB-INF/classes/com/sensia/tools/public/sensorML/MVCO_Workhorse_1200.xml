@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<sml:PhysicalSystem gml:id="mvco_workhorse_1200" xml:lang="en"
+   definition="http://sensorml.com/def/sensor/processingSystem"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:gmd="http://www.isotc211.org/2005/gmd"
+   xmlns:gco="http://www.isotc211.org/2005/gco"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:ism="urn:us:gov:ic:ism"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd">
+
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>This is the RDI Workhorse 1200 deployed at 
+            Matha's Vineyard Coastal Observatory.</gml:description>
+   <gml:identifier codeSpace="UniqueID">urn:whoi:mvco:mvco_workhorse_1200</gml:identifier>
+   <gml:name>MVCO_Workhorse_1200</gml:name>
+   <sml:keywords>
+      <sml:KeywordList>
+         <sml:keyword>oceanography</sml:keyword>
+         <sml:keyword>waves</sml:keyword>
+         <sml:keyword>currents</sml:keyword>
+         <sml:keyword>acoustic Doppler</sml:keyword>
+         <sml:keyword>profiler</sml:keyword>
+         <sml:keyword>WHOI</sml:keyword>
+      </sml:KeywordList>
+   </sml:keywords>
+
+   <!--==========================================================-->
+   <!--===================System Identifiers=====================-->
+   <!--==========================================================-->
+   <sml:identification>
+      <sml:IdentifierList>
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/longName">
+               <sml:label>Long Name</sml:label>
+               <sml:value>Teledyne RDI ADCP at MVCO</sml:value>
+            </sml:Term>
+         </sml:identifier>
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/shortName">
+               <sml:label>Short Name</sml:label>
+               <sml:value>MVCO_ADCP</sml:value>
+            </sml:Term>
+         </sml:identifier>
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/serialNumber">
+               <sml:label>Serial Number</sml:label>
+               <sml:value>14391</sml:value>
+            </sml:Term>
+         </sml:identifier>
+         <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/deployer">
+               <sml:label>Deploying Agency</sml:label>
+               <sml:value>Woods Hole Oceanographic Institute</sml:value>
+            </sml:Term>
+         </sml:identifier>
+      </sml:IdentifierList>
+   </sml:identification>
+
+   <!--==========================================================-->
+   <!--===================System Classifiers=====================-->
+   <!--==========================================================-->
+   <sml:classification>
+      <sml:ClassifierList>
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/application">
+               <sml:label>Intended Application</sml:label>
+               <sml:value>Ocean Waves</sml:value>
+            </sml:Term>
+         </sml:classifier>
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/application">
+               <sml:label>Intended Application</sml:label>
+               <sml:value>Ocean Currents</sml:value>
+            </sml:Term>
+         </sml:classifier>
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/sensorType">
+               <sml:label>Sensor Type</sml:label>
+               <sml:value>Acoustic Doppler</sml:value>
+            </sml:Term>
+         </sml:classifier>
+         <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/sensorType">
+               <sml:label>Sensor Type</sml:label>
+               <sml:value>profiler</sml:value>
+            </sml:Term>
+         </sml:classifier>
+      </sml:ClassifierList>
+   </sml:classification>
+   <!--==========================================================-->
+   <!--===================Constraints=============================-->
+   <!--==========================================================-->
+   <!--- Valid Time in this context applies to this document -->
+   <sml:validTime>
+      <gml:TimeInstant gml:id="validTime">
+         <gml:timePosition indeterminatePosition="after">2009-03-20</gml:timePosition>
+      </gml:TimeInstant>
+   </sml:validTime>
+
+   <!--==========================================================-->
+   <!--============       System Contacts           =============-->
+   <!--==========================================================-->
+   <sml:contacts>
+      <sml:ContactList>
+         <sml:contact xlink:arcrole="http://sensorml.com/ont/swe/role/Operator">
+               <gmd:CI_ResponsibleParty>
+                  <gmd:individualName>
+                     <gco:CharacterString>Janet Fredericks</gco:CharacterString>
+                  </gmd:individualName>
+                  <gmd:organisationName>
+                     <gco:CharacterString>Woods Hole Oceanographic Institute</gco:CharacterString>
+                  </gmd:organisationName>
+                  <gmd:contactInfo>
+                     <gmd:CI_Contact>           
+                        <gmd:phone>
+                           <gmd:CI_Telephone>
+                              <gmd:voice>
+                                 <gco:CharacterString>+1-508-548-1400</gco:CharacterString>
+                              </gmd:voice>
+                           </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                           <gmd:CI_Address>
+                              <gmd:deliveryPoint>
+                                 <gco:CharacterString>266 Water Street</gco:CharacterString>
+                              </gmd:deliveryPoint>
+                              <gmd:city>
+                                 <gco:CharacterString>Woods Hole</gco:CharacterString>
+                              </gmd:city>
+                              <gmd:administrativeArea>
+                                 <gco:CharacterString>MA</gco:CharacterString>
+                              </gmd:administrativeArea>
+                              <gmd:postalCode>
+                                 <gco:CharacterString>02543</gco:CharacterString>
+                              </gmd:postalCode>
+                              <gmd:country>
+                                 <gco:CharacterString>USA</gco:CharacterString>
+                              </gmd:country>
+                              <gmd:electronicMailAddress>
+                                 <gco:CharacterString>jfredericks@whoi.edu</gco:CharacterString>
+                              </gmd:electronicMailAddress>
+                           </gmd:CI_Address>
+                        </gmd:address>
+                     </gmd:CI_Contact>
+                  </gmd:contactInfo>
+                  <gmd:role gco:nilReason="inapplicable"/>
+               </gmd:CI_ResponsibleParty>
+         </sml:contact>
+      </sml:ContactList>
+   </sml:contacts>
+
+   <!--==========================================================-->
+   <!--================       History             ===============-->
+   <!--==========================================================-->
+   
+   <!-- TODO: move history to separate, referenceable document !?!?! -->
+   <sml:history>
+      <sml:EventList>
+
+         <sml:event>
+            <sml:Event definition="http://sensorml.com/ont/swe/property/deploymentEvent">
+               <swe:label>System Deployment</swe:label>
+               <swe:description>Initial system deployment</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="deploymentDate">
+                     <gml:timePosition>
+                        2001-04-20
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+              
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Deployment Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SystemDeployment</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#RDI_Workhorse_1200"/>
+                     <swe:field name="SerialNumber">
+                        <swe:Category definition="http://sensorml.com/ont/swe/property/serialNumber">
+                           <swe:value>1654</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ManufactureDate">
+                        <swe:Time definition="http://sensorml.com/ont/swe/property/manufactureDate" 
+                              referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                              <swe:label>Manufacture Date</swe:label>
+                              <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2007-09-01T00:00:00Z</swe:value>
+                        </swe:Time>
+                      </swe:field>
+                     <swe:field name="deployedPeriod">
+                        <swe:TimeRange definition="http://sensorml.com/ont/swe/property/deployedTimeRange" 
+                          referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                          <swe:label>Manufacture Date</swe:label>
+                          <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                          <swe:value>2001-04-20T00:00:00Z 2009-08-31T23:00:00Z</swe:value>
+                        </swe:TimeRange>
+                     </swe:field>
+                     <swe:field name="FirmwareVersion">
+                        <swe:Category definition="http://sensorml.com/ont/swe/property/firmwareVersion">
+                           <swe:value>16.21</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="AdditionalDocumentation"
+                        xlink:href="http://mvcodata.whoi.edu/documentation"/>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Sensor Change</swe:label>
+               <swe:description>Sensor Change</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="t67yye7">
+                     <gml:timePosition>
+                        2007-11-20
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord definition="http://sensorml.com/ont/swe/property/sensorChangeParameters">
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorChange</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#RDI_Workhorse_1200"/>
+                     <swe:field name="SerialNumber">
+                        <swe:Category definition="urn:ogc:def:identifier:OGC:serialNumber">
+                           <swe:value>10295</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ManufactureDate">
+                        <swe:Time 
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2007-11-20T00:00:00Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="DeploymentTimeRange">
+                        <swe:TimeRange definition=""
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2009-09-03T16:07:58Z now</swe:value>
+                        </swe:TimeRange>
+                     </swe:field>
+                     <swe:field name="FirmwareVersion">
+                        <swe:Category definition="http://sensorml.com/ont/swe/property/firmwareVersion">
+                           <swe:value>16.3</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="AdditionalDocumentation"
+                        xlink:href="http://mvcodata.whoi.edu/documentation"/>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Temperature Sensor Deployed</swe:label>
+               <swe:description>Deployment data for Temperature Sensor</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="he56d2">
+                     <gml:timePosition>
+                        2001-04-20
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Deployment Metadata</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorDeployment</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#TemperatureSensor"/>
+                     <swe:field name="ManufactureDate">
+                        <swe:Time 
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2001-04-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2001-04-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationLocation">
+                        <swe:Category>
+                           <swe:value>Manufacturer</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Temperature Sensor Change</swe:label>
+               <swe:description>Deployment data for Changed Temperature Sensor</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="wte7u2">
+                     <gml:timePosition>
+                        2009-09-01Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Sensor Change Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorChange</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#TemperatureSensor"/>
+                     <swe:field name="ManufactureDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2007-11-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2007-11-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationLocation">
+                        <swe:Category>
+                           <swe:value>Manufacturer</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label> Pressure Sensor Deployed</swe:label>
+               <swe:description>Deployment data for Pressure Sensor</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="t762erw">
+                     <gml:timePosition>
+                        2001-04-20Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Deployment MetaData</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorDeployment</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor"/>
+                     <swe:field name="ManufactureDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2001-04-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2001-04-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationLocation">
+                        <swe:Category>
+                           <swe:value>Manufacturer</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Sensor Change</swe:label>
+               <swe:description>Deployment data for Changed Pressure Sensor</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="ue34t67">
+                     <gml:timePosition>
+                        2007-11-20Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Sensor Change Parameter</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorChange</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor"/>
+                     <swe:field name="ManufactureDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2007-11-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2007-11-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                     <swe:field name="CalibrationLocation">
+                        <swe:Category>
+                           <swe:value>Manufacturer</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Transducer Deployment</swe:label>
+               <swe:description>Deployment data for Transducers</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="guey840">
+                     <gml:timePosition>
+                        2001-04-20Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Deployment Data</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorDeployment</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"/>
+                     <swe:field name="manufacturerDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2001-04-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Sensor Change</swe:label>
+               <swe:description>Deployment data for Changed Transducer</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="gy809u">
+                     <gml:timePosition>
+                        2007-11-20Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Sensor Change Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorChange</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"/>
+                     <swe:field name="manufacturerDate">
+                        <swe:Time
+                           referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                           <swe:label>Manufacture Date</swe:label>
+                           <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                           <swe:value>2007-11-20Z</swe:value>
+                        </swe:Time>
+                     </swe:field>
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Pressure Port Impacted</swe:label>
+               <swe:description>pressure port deployed with mud embedded (bad pressure)</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="s42f35">
+                     <gml:timePosition>
+                        2003-04-14Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Pressure Port Deployment Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorDeployment</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Replaced Pressure Port</swe:label>
+               <swe:description>pressure port replaced</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="hey984">
+                     <gml:timePosition>
+                        2004-08-31Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+                <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Pressure Port Deployment Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>SensorChange</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="g48h9">
+                     <gml:timePosition>
+                        2003-10-29Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="h9y76">
+                     <gml:timePosition>
+                        2004-12-06Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="l0uy69">
+                     <gml:timePosition>
+                        2005-05-12Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="ht4r3e">
+                     <gml:timePosition>
+                        2005-11-12Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="r5y2nk">
+                     <gml:timePosition>
+                        2006-03-07Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                            <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>New Tray</swe:label>
+               <swe:description>instrument maintenance new tray installed; ht above bottom
+                        raised to 2.25 m</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="r3t7w8">
+                     <gml:timePosition>
+                        2006-09-01Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>New Tray</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/MVCO_ObservingSystem.xml#12mNode"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="w9ue83">
+                     <gml:timePosition>
+                        2008-01-29Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="qi87hj">
+                     <gml:timePosition>
+                        2008-04-25Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+         </sml:event>
+
+         <sml:event>
+            <sml:Event>
+               <swe:label>Cleaned Faces</swe:label>
+               <swe:description>cleaned off ADCP faces</swe:description>
+               <sml:time>
+                  <gml:TimeInstant gml:id="o9ut67">
+                     <gml:timePosition>
+                        2009-03-21T19:00:00Z
+                     </gml:timePosition>
+                  </gml:TimeInstant>
+               </sml:time>
+               <sml:property>
+                  <swe:DataRecord>
+                     <swe:label>Cleaned Faces Parameters</swe:label>
+                     <swe:field name="EventType">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/historyEventType">
+                           <swe:value>CleanedFaces</swe:value>
+                        </swe:Category>
+                     </swe:field>
+                     <swe:field name="ComponentID"
+                        xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer"
+                     />
+                  </swe:DataRecord>
+               </sml:property>
+            </sml:Event>
+            </sml:event>
+       </sml:EventList>
+   </sml:history>
+   
+   
+   <!--==========================================================-->
+   <!--============        Type Of parent            ============-->
+   <!--==========================================================-->
+   
+   <sml:typeOf xlink:title="urn:teledyne_rdi:workhorse_1200"
+      xlink:href="http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml"/>
+
+
+   <!--==========================================================-->
+   <!--============        ConfigurationSystem Parameters         ============-->
+   <!--==========================================================-->
+   
+   <sml:configuration>
+      <sml:Settings>
+         
+         <sml:setValue ref="parameters/dopplerParameters/reportingFrequency"> 20 </sml:setValue>
+         <sml:setValue ref="parameters/dopplerParameters/samplingFrequency"> 2 </sml:setValue>
+         <sml:setValue ref="parameters/dopplerParameters/distanceToFirstBin"> 122 </sml:setValue>
+         <sml:setValue ref="parameters/dopplerParameters/pingInterval"> 0.5 </sml:setValue>
+         
+         <sml:setMode ref="modes/depthOption">depthOption_200m</sml:setMode>
+         
+      </sml:Settings>
+   </sml:configuration>   
+
+   <!-- ================================================= -->
+   <!--     Station Location and Orientation              -->
+   <!-- ================================================= -->
+   <sml:position>
+      <swe:DataRecord>
+         <swe:field name="location">
+            <swe:Vector
+               definition="http://sensorml.com/ont/swe/property/SensorLocation"
+               referenceFrame="http://www.opengis.net/def/crs/EPSG/6.7/4979"
+               localFrame="#SENSOR_FRAME">
+               <swe:coordinate name="Lat">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/Latitude" axisID="Lat">
+                     <swe:uom code="deg"/>
+                     <swe:value>41.3366</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+               <swe:coordinate name="Lon">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/Longitude" axisID="Long">
+                     <swe:uom code="deg"/>
+                     <swe:value>-70.5564</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+               <swe:coordinate name="Alt">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/Altitude" axisID="Alt">
+                     <swe:uom code="m"/>
+                     <swe:value>0</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+            </swe:Vector>
+         </swe:field>
+         <swe:field name="orientation">
+            <swe:Vector
+               definition="http://sensorml.com/ont/swe/property/SensorOrientation"
+               referenceFrame="http://www.opengis.net/def/crs/NED"
+               localFrame="#SENSOR_FRAME">
+               <swe:coordinate name="trueHeading">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/TrueHeading" axisID="Z">
+                     <swe:label>True Heading</swe:label>
+                     <swe:uom code="deg"/>
+                     <swe:value>244</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+            </swe:Vector>
+         </swe:field>
+      </swe:DataRecord>
+   </sml:position>  
+
+</sml:PhysicalSystem>
