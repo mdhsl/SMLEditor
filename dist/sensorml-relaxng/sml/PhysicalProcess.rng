@@ -9,11 +9,7 @@
    <!-- -->
    <include href="Process.rng">
       <start>
-         <choice>
-			<ref name="sml.SimpleProcess"/>
-			<ref name="sml.AggregateProcess"/>
-			<ref name="sml.inputs"/>
-		</choice>
+         <ref name="sml.ProcessGroup"/>
       </start>
    </include>
        
@@ -35,16 +31,20 @@
          <ref name="sml.describedObject"/>
          <ref name="sml.ProcessContents"/>
          <ref name="sml.PhysicalContents"/>
-         <ref name="sml.components"/>
-         <ref name="sml.connections"/>
+         <optional>
+            <ref name="sml.components"/>
+         </optional>
+         <optional>
+            <ref name="sml.connections"/>
+         </optional>
       </element>
    </define>
    
    <!-- All Processes -->
    <define name="sml.ProcessGroup" combine="choice">
       <choice>
-         <ref name="sml.AggregateProcess"/>
-          <ref name="sml.PhysicalSystem"/>
+         <ref name="sml.PhysicalComponent"/>
+         <ref name="sml.PhysicalSystem"/>
       </choice>
    </define>
    
@@ -52,8 +52,9 @@
    <!-- Physical Contents -->
    <define name="sml.PhysicalContents">
       <optional>
-         <element name="sml.attachedTo">
-            <ref name="sml.ProcessGroup"/>
+         <a:documentation>Link to Platform</a:documentation>
+         <element name="sml:attachedTo">
+            <ref name="xlink.hrefWithTitle"/>
          </element>
      </optional>
      <optional>

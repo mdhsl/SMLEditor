@@ -79,28 +79,6 @@
       </attribute>
    </define>
    
-   <!-- UUID -->
-   <define name="gml.uuid">
-      <a:documentation>Universal Unique Identifier </a:documentation>
-      <attribute name="gml:uuid">
-         <data type="token">
-             <param name="minLength">1</param>
-         </data>
-     </attribute>
-   </define>
-   
-   <!-- ID Group -->
-   <define name="gml.idGroup">
-      <group>
-         <optional>
-            <ref name="gml.id"/>
-         </optional>
-         <optional>
-            <ref name="gml.uuid"/>
-         </optional>         
-      </group>
-   </define>
-   
    <!-- description -->
    <define name="gml.description">
       <a:documentation>Textual Description</a:documentation>
@@ -142,20 +120,30 @@
    </define>
    
    <!-- xlink href -->
-   <!-- Note: when href is present, title is required -->
    <define name="xlink.href">
       <a:documentation>By Reference</a:documentation>
+      <attribute name="xlink:href">
+			  <data type="anyURI">
+				  <param name="minLength">1</param>
+			  </data>
+		  </attribute>
+   </define>
+   
+   <!-- xlink href with title -->
+   <!-- Note: when href is present, title is required -->
+   <define name="xlink.hrefWithTitle">
+      <a:documentation>By Reference</a:documentation>
       <group>
-		  <attribute name="xlink:href">
-			 <data type="anyURI">
-				<param name="minLength">1</param>
-			 </data>
-		  </attribute>
-		  <attribute name="xlink:title">
-			 <data type="token">
-				<param name="minLength">1</param>
-			 </data>
-		  </attribute>
+         <attribute name="xlink:title">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
+         <attribute name="xlink:href">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
       </group>
    </define>
    
@@ -163,16 +151,16 @@
    <define name="xlink.roles">
       <a:documentation>support for roles</a:documentation>
       <choice>
-            <attribute name="xlink:arcrole">
-               <data type="anyURI">
-                  <param name="minLength">1</param>
-               </data>
-            </attribute>
-            <attribute name="xlink:role">
-               <data type="anyURI">
-                  <param name="minLength">1</param>
-               </data>
-            </attribute>
+         <attribute name="xlink:arcrole">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
+         <attribute name="xlink:role">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
       </choice>
    </define>
    

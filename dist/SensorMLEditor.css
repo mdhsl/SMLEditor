@@ -125,7 +125,7 @@ html>body .gwt-DecoratedTabBar {
 
 }
 
-.gwt-DisclosurePanel a.header {
+/*.gwt-DisclosurePanel a.header {
   cursor: hand;
   cursor: pointer;
   background-attachment: initial;
@@ -135,16 +135,16 @@ html>body .gwt-DecoratedTabBar {
   background-position: 0px 0px;
   background-repeat: no-repeat;
   padding-left: 18px;
-}
+}*/
 	
-.gwt-disclosurepanel .content {
+/*.gwt-disclosurepanel .content {
   border-left: 29px !important;
   padding: 0px;
   margin-left: 0px;
   margin-top: 5px;
   border-left: 2px solid #e7e7e7 !important;
   
-}
+}*/
 
 .gwt-TextBox {
   padding: 1px 1px 1px 1px;
@@ -186,10 +186,10 @@ html>body .gwt-DecoratedTabBar {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  background-image: url(sensormleditor/images/add.gif);
+  background-image: url(sensormleditor/images/add-icon.png);
   cursor: hand;
   cursor: pointer;
-  margin-top: 1px;
+  margin-top: 4px;
   /*margin-bottom: 5px;
   margin-right: 5px;*/
 }
@@ -211,7 +211,7 @@ html>body .gwt-DecoratedTabBar {
   background-image: url(sensormleditor/images/remove.gif);
   cursor: hand;
   cursor: pointer;
-  margin-top: 2px;
+  margin-top: 4px;
   margin-left: 5px;
 }
 
@@ -343,10 +343,10 @@ td, th  {
     overflow: hidden;
 }
 
-table.advanced-panel {
+/*table.advanced-panel {
 	border-spacing: 10px;
 	padding: 5px;
-}
+}*/
 
 table.sub-address-panel {
 	border-spacing: 10px;
@@ -484,14 +484,6 @@ table.sml-mode-nolabel-vertical-panel {
 	border: 1px solid #c4b29d;
 }
 
-.link-icon-panel {
-	background-image: url(sensormleditor/images/arrow-right.png) !important;
-	width:25px;
-	height:7px;
-	margin-top:2px;
-	margin-right:5px;
-}
-
 .xlink {
 	margin-right:5px;
 }
@@ -520,4 +512,303 @@ table.sml-mode-nolabel-vertical-panel {
 .tabular-4x{
 	margin-top:10px;
 	margin-bottom:10px;
+}
+
+.main-editor-tab-panel{
+	width:100%;
+	height:100%;
+}
+
+.config-editor-panel{
+	width:100%;
+	height:100%;
+}
+
+.editor-panel{
+	width:100%;
+	height:100%;
+}
+
+.editor-v-main-panel {
+	width:100%;
+	vertical-align : top !important;
+}
+
+/******** NEW ********/
+.gwt-DisclosurePanel .content {
+	padding: 4px 0px 4px 25px!important;
+	margin-left:10px;
+		
+}
+
+/* remove click onto disclosure header */
+/*table.gwt-DisclosurePanel-open>tbody>tr>td> a.header {
+    width: 0px;
+}*/
+
+.viewer {
+	margin-top : 30px;
+	margin-left: 10px;
+}
+
+.editor {
+	margin-top : 30px;
+	margin-left: 30px;
+}
+/*** HEADER ***/
+
+.header-document {
+	width: 100%;
+}
+
+.header-title-panel .gwt-HTML{
+	font-size:25px;
+	font-weight:bold;
+}
+
+/*** SECTION ***/
+
+.section-panel .header td {
+	font-weight:bold;
+	font-size:17px;
+}
+
+.section-panel .header {
+	cursor: hand;
+  	cursor: pointer;
+}
+
+.section-panel .content {
+	border-left: 2px solid #e7e7e7 !important;
+}
+
+/*** HORIZONTAL PANELS ***/
+
+.horizontal-panel .gwt-HTML{
+	margin-right:5px;
+}
+
+/** SML LINK **/
+.link-icon-panel {
+	background-image: url(sensormleditor/images/arrow-right.png) !important;
+	width:25px;
+	height:7px;
+	margin-top:2px;
+	margin-right:5px;
+	margin-left: 5px;
+}
+
+/** LINE **/
+
+.line-generic-edit {
+	margin-top:-15px;
+}
+
+.line-generic {
+	border-spacing:5px;
+}
+.line-generic-panel-before {
+	min-width : 370px;
+}
+.line-generic-label-panel-before {
+	min-width : 220px;
+}
+.line-generic-definition-panel-before {
+	min-width : 30px;
+}
+
+.line-generic-dots-edit {
+	
+}
+
+.line-generic-definition-panel-before-edit {
+	height:72px;
+	margin-left:90px;
+}
+
+.line-generic-definition-panel-before-edit .ontology-icon {
+	margin-top:30px;
+}
+	
+/** DISCLOSURE **/
+
+.disclosure-generic-simple {
+	/*padding:0px 0px 5px 0px;
+	margin-left: 10px;*/
+}
+.disclosure-generic .content {
+/*	border-spacing:7px !important;*/
+	margin-left:10px !important;
+}
+
+/** remove disclosure border **/
+.disclosure-noborder .content {
+	border-left:none !important;
+	padding:4px 0px 4px 8px !important;
+}
+.disclosure-generic .disclosure-noborder {
+	margin-left:10px !important;
+}
+/** remove disclosure icon **/
+.disclosure-generic .disclosure-noborder .header>table>tbody>tr>td:first-of-type {
+	display:none !important;
+}
+
+.rng-optional-select-add {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url(sensormleditor/images/add-icon.png);
+  cursor: hand;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.rng-optional-select-remove {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url(sensormleditor/images/remove.gif);
+  cursor: hand;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.rng-optional-pattern {
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:22px;
+}
+
+.rng-optional-pattern-single {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.rng-choice-pattern {
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:22px;
+}
+
+.rng-zeroormore-pattern {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.textbox {
+	/* margin-top: 5px; */
+    /* margin-bottom: 5px; */
+    padding: 0px 0px !important;
+    width: 221px;
+    background: transparent url(sensormleditor/images/bg.jpg) no-repeat;
+    color: #747862;
+    height: 20px;
+    /* border: 0 !important; */
+    padding: 4px 8px !important;
+    margin-bottom: 0px;
+    border-left:none !important;
+    margin-right:5px;
+}
+
+input:focus { 
+  border-color: rgba(38, 155, 201, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(38, 155, 201, 0.6);
+  moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(38, 155, 201, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(38, 155, 201, 0.6);
+  border-left:1px !important;
+}
+
+.advanced-dialog {
+	min-width: 400px;
+    min-height: 300px;
+    max-width: 900px;
+    max-height: 950px;
+    overflow: auto;
+}
+
+.advanced-dialog-dots {
+	cursor:pointer;
+}
+
+.rng-shift-remove {
+	margin-left:-25px;
+}
+
+.rng-disclosure >tbody>tr>td{
+	vertical-align:top !important;
+}
+
+/*.vertical-generic-panel {
+	border-spacing: 10;
+	margin-top:-10px;
+}*/
+
+.attribute-panel-advanced {
+	border-spacing: 7px;
+    margin-left: -7px;
+}
+
+.attribute-panel-edit {
+	border-spacing: 7px;
+    margin-left: -7px;
+}
+
+.attribute-panel-advanced .gwt-HTML {
+	min-width:100px;
+}
+
+.advanced-simple-element-panel {
+	border-spacing: 7px;
+    margin-left: -7px;
+}
+
+.advanced-panel table tr td{
+	border-spacing: 7px;
+    margin-left: -7px;
+}
+.advanced-simple-element-panel .gwt-HTML {
+	min-width:100px;
+}
+
+.edit-subsection-element-inner-panel {
+	margin-left:8px;
+}
+
+.edit-subsection-element-panel{
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+    
+.edit-subsection-element-panel .gwt-HTML {
+	font-weight: bold;
+}
+
+.dialog {
+	width:700px;
+	height:750px;
+}
+
+.dialog-main {
+	width:660px;
+	height:550px;
+	overflow:auto;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.dialog-close {
+	background: transparent url(sensormleditor/images/remove.gif) no-repeat !important;
+	padding: 0 0 0 0 !important;
+	width:16px;
+	height:16px;
+}
+
+/** hide label element from the () header */
+.section-panel .header .advanced-simple-element-panel .gwt-HTML {
+	display: none;
 }

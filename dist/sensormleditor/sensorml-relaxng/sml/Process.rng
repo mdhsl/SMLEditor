@@ -9,14 +9,7 @@
    <!-- -->
    <include href="core.rng">
       <start>
-         <!--choice>
             <ref name="sml.ProcessGroup"/>
-         </choice-->
-         <choice>
-			<ref name="sml.SimpleProcess"/>
-			<ref name="sml.AggregateProcess"/>
-			<ref name="sml.inputs"/>
-		</choice>
       </start>
    </include>
       
@@ -46,6 +39,12 @@
    <!-- Defines the basic components of a process -->
    <define name="sml.ProcessContents">
       <group>
+      <optional>
+        <a:documentation>Process Definition URI</a:documentation>
+        <attribute name="definition">
+          <data type="anyURI"/>
+        </attribute>
+      </optional>
 		  <optional>
 			 <ref name="sml.typeOf"/>
 		  </optional>
@@ -72,7 +71,18 @@
   
    
    <!-- Input list -->
+   <!-- Simplified version without support for href -->
    <define name="sml.inputs">
+      <a:documentation>Inputs</a:documentation>
+      <element name="sml:inputs">
+         <element name="sml:InputList">
+            <oneOrMore>
+               <ref name="sml.input"/>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+   <!--<define name="sml.inputs">
       <a:documentation>Inputs</a:documentation>
       <element name="sml:inputs">
          <optional>
@@ -92,10 +102,21 @@
             </element>
          </choice>
       </element>
-   </define>
+   </define>-->
    
    <!-- Output list -->
+   <!-- Simplified version without support for href -->
    <define name="sml.outputs">
+      <a:documentation>Outputs</a:documentation>
+      <element name="sml:outputs">
+         <element name="sml:OutputList">
+            <oneOrMore>
+               <ref name="sml.output"/>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+   <!--<define name="sml.outputs">
       <a:documentation>Outputs</a:documentation>
       <element name="sml:outputs">
          <optional>
@@ -115,10 +136,21 @@
             </element>
          </choice>
       </element>
-   </define>
+   </define>-->
    
    <!-- Parameter list -->
+   <!-- Simplified version without support for href -->
    <define name="sml.parameters">
+      <a:documentation>Parameters</a:documentation>
+      <element name="sml:parameters">
+         <element name="sml:ParameterList">
+            <oneOrMore>
+               <ref name="sml.parameter"/>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+   <!--<define name="sml.parameters">
       <a:documentation>Parameters</a:documentation>
       <element name="sml:parameters">
          <optional>
@@ -138,10 +170,20 @@
             </element>
          </choice>
       </element>
-   </define>
+   </define>-->
    
    <!--components -->
+   <!-- Simplified version without support for href -->
    <define name="sml.components">
+      <element name="sml:components">
+         <element name="sml:ComponentList">
+            <oneOrMore>
+               <ref name="sml.component"/>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+   <!--<define name="sml.components">
       <element name="sml:components">
          <optional>
             <ref name="xlink.roles"/>
@@ -153,17 +195,26 @@
                <optional>
                   <ref name="gml.id"/>
                </optional>
-               <!-- sml.extension -->
                <oneOrMore>
                   <ref name="sml.component"/>
                </oneOrMore>
             </element>
          </choice>
       </element>
-   </define>
+   </define>-->
    
    <!-- connections -->
+   <!-- Simplified version without support for href -->
    <define name="sml.connections">
+      <element name="sml:connections">
+         <element name="sml:ConnectionList">
+           <oneOrMore>
+             <ref name="sml.connection"/>
+           </oneOrMore>
+         </element>
+      </element>
+   </define>
+   <!--<define name="sml.connections">
       <element name="sml:connections">
          <optional>
             <ref name="xlink.roles"/>
@@ -181,7 +232,7 @@
             </element>
           </choice>
       </element>
-   </define>
+   </define>-->
    
    <!-- Process Method defintion -->
    <define name="sml.method">
@@ -198,12 +249,12 @@
    <define name="sml.input">
       <element name="sml:input">
          <ref name="swe.nameAtt"/>
-         <optional>
+         <!--<optional>
             <ref name="xlink.roles"/>
-         </optional>
+         </optional>-->
          <choice>
             <ref name="xlink.href"/>
-            <ref name="swe.AnyData"/>
+            <ref name="swe.AnyDataList"/>
             <ref name="sml.ObservableProperty"/>
          </choice>
       </element>
@@ -213,12 +264,12 @@
    <define name="sml.output">
       <element name="sml:output">
          <ref name="swe.nameAtt"/>
-         <optional>
+         <!--<optional>
             <ref name="xlink.roles"/>
-         </optional>
+         </optional>-->
          <choice>
             <ref name="xlink.href"/>
-            <ref name="swe.AnyData"/>
+            <ref name="swe.AnyDataList"/>
             <ref name="sml.ObservableProperty"/>
          </choice>
       </element>
@@ -233,7 +284,7 @@
          </optional>
          <choice>
             <ref name="xlink.href"/>
-            <ref name="swe.AnyData"/>
+            <ref name="swe.AnyDataList"/>
          </choice>
       </element>
    </define>
@@ -246,7 +297,7 @@
             <ref name="xlink.roles"/>
          </optional>
          <choice>
-            <ref name="xlink.href"/>
+            <ref name="xlink.hrefWithTitle"/>
             <ref name="sml.ProcessGroup"/>
          </choice>
       </element>
@@ -291,8 +342,9 @@
   
     <!-- typeOf -->
     <define name="sml.typeOf">
-       <element name="sml.typeOf">
-          <ref name="xlink.href"/>
+       <a:documentation>Link to Process Type Description</a:documentation>
+       <element name="sml:typeOf">
+          <ref name="xlink.hrefWithTitle"/>
        </element>
     </define>
    
@@ -321,7 +373,7 @@
    
    <!-- Feature of Interest FINISH THIS   -->
    <define name="sml.featureOfInterest">
-      <empty/>
+      <a:documentation>Feature of Interest</a:documentation>      
    </define>
    
    

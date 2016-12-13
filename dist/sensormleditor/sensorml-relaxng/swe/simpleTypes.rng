@@ -441,37 +441,49 @@
    <!-- Any Scalar -->
    <define name="swe.AnyScalar">
       <choice>
-         <ref name="swe.AnyNumerical"/>
-         <ref name="swe.Boolean"/>
-         <ref name="swe.Category"/>
-         <ref name="swe.Text"/>
+         <ref name="swe.AnyScalarList"/>
       </choice>
+   </define>
+   <define name="swe.AnyScalarList">
+      <ref name="swe.AnyNumericalList"/>
+      <ref name="swe.Boolean"/>
+      <ref name="swe.Category"/>
+      <ref name="swe.Text"/>
    </define>
    
    <!-- Any Numerical -->
    <define name="swe.AnyNumerical">
       <choice>
-         <ref name="swe.Count"/>
-         <ref name="swe.Quantity"/>
-         <ref name="swe.Time"/>
+         <ref name="swe.AnyNumericalList"/>
       </choice>
    </define>
-   
+   <define name="swe.AnyNumericalList">
+      <ref name="swe.Count"/>
+      <ref name="swe.Quantity"/>
+      <ref name="swe.Time"/>
+   </define>
+
    <!-- Any Range -->
    <define name="swe.AnyRange">
       <choice>
-         <ref name="swe.QuantityRange"/>
-         <ref name="swe.CountRange"/>         
-         <ref name="swe.TimeRange"/>
+         <ref name="swe.AnyRangeList"/>
       </choice>
+   </define>
+   <define name="swe.AnyRangeList">
+      <ref name="swe.QuantityRange"/>
+      <ref name="swe.CountRange"/>         
+      <ref name="swe.TimeRange"/>
    </define>
    
    <!-- Any Simple -->
    <define name="swe.AnySimple">
       <choice>
-         <ref name="swe.AnyScalar"/>
-         <ref name="swe.AnyRange"/>
+         <ref name="swe.AnySimpleList"/>
       </choice>
+   </define>
+   <define name="swe.AnySimpleList">
+      <ref name="swe.AnyScalarList"/>
+      <ref name="swe.AnyRangeList"/>
    </define>
    
    <!--=============-->

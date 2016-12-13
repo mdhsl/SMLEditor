@@ -261,17 +261,15 @@
    <!-- AnyData Group -->
    <define name="swe.AnyData">
       <choice>
-         <ref name="swe.AnySimple"/>
-         <ref name="swe.SimpleDataRecord"/>
-         <ref name="swe.DataRecord"/>
-         <!-- NOT IN 2.0
-         <ref name="swe.ConditionalData"/>
-         <ref name="swe.ConditionalValue"/>
-         <ref name="swe.Curve"/>
-         -->
-         <ref name="swe.DataArray"/>
-         <ref name="swe.Vector"/>
+         <ref name="swe.AnyDataList"/>
       </choice>
+   </define>
+   <define name="swe.AnyDataList">
+      <ref name="swe.AnySimpleList"/>
+      <ref name="swe.SimpleDataRecord"/>
+      <ref name="swe.DataRecord"/>
+      <ref name="swe.DataArray"/>
+      <ref name="swe.Vector"/>
    </define>
    
    <!-- EncodedValueGroup -->

@@ -11,74 +11,72 @@
    <!-- -->
    <include href="../swe/data.rng"/>
    
+   <!-- GML Object Group with SML modification-->
+   <define name="sml.GmlObjectGroup">
+      <group>
+         <optional>
+            <ref name="gml.id"/>
+         </optional>
+         <optional>
+            <ref name="gml.description"/>
+         </optional>
+         <element name="gml:identifier">
+            <attribute name="codeSpace">
+               <value>uniqueID</value>
+            </attribute>
+            <data type="ID"/>
+         </element>	
+         <optional>
+            <ref name="gml.name"/>
+         </optional>
+      </group>
+   </define>
+   
    
    <!-- Described Object -->
    <define name="sml.describedObject">
-      <group>
-		  <ref name="sml.attributes"/>
-	  
-		  <!-- ADD GML STUFF  -->	  
-		  <!--
-		  <zeroOrMore>
-			 <ref name="sml.extension"/>
-		  </zeroOrMore>
-		  -->
-		  <zeroOrMore>
-			 <ref name="sml.keywords"/>
-		  </zeroOrMore>
-		  <zeroOrMore>
-			 <ref name="sml.identification"/>
-		  </zeroOrMore>
-		  <zeroOrMore>
-			 <ref name="sml.classification"/>
-		  </zeroOrMore>
-		  <optional>
-			 <ref name="sml.validTime"/>
-		  </optional>
-		  <optional>
-			 <ref name="sml.securityConstraint"/>
-		  </optional>
-      
-		  <zeroOrMore>
-         
-			 <ref name="sml.legalConstraint"/>
-      
-		  </zeroOrMore>
-		  <zeroOrMore>
-			 <ref name="sml.characteristics"/>
-		  </zeroOrMore>
-		  <zeroOrMore>
-			 <ref name="sml.capabilities"/>
-		  </zeroOrMore>
-		  <zeroOrMore>
-			 <ref name="sml.contacts"/>
-		  </zeroOrMore>
-		  <zeroOrMore>
-			 <ref name="sml.documentation"/>
-		  </zeroOrMore>
-		   <zeroOrMore>
-			 <ref name="sml.history"/>
-		  </zeroOrMore>
+      <group>		  	  
+  		  <ref name="sml.GmlObjectGroup"/>            
+  		  <!--
+  		  <zeroOrMore>
+  			 <ref name="sml.extension"/>
+  		  </zeroOrMore>
+  		  -->
+  		  <zeroOrMore>
+  			 <ref name="sml.keywords"/>
+  		  </zeroOrMore>
+  		  <zeroOrMore>
+  			 <ref name="sml.identification"/>
+  		  </zeroOrMore>
+  		  <zeroOrMore>
+  			 <ref name="sml.classification"/>
+  		  </zeroOrMore>
+  		  <optional>
+  			 <ref name="sml.validTime"/>
+  		  </optional>
+  		  <optional>
+  			 <ref name="sml.securityConstraint"/>
+  		  </optional>        
+  		  <zeroOrMore>           
+  			 <ref name="sml.legalConstraint"/>        
+  		  </zeroOrMore>
+  		  <zeroOrMore>
+  			 <ref name="sml.characteristics"/>
+  		  </zeroOrMore>
+  		  <zeroOrMore>
+  			 <ref name="sml.capabilities"/>
+  		  </zeroOrMore>
+  		  <zeroOrMore>
+  			 <ref name="sml.contacts"/>
+  		  </zeroOrMore>
+  		  <zeroOrMore>
+  			 <ref name="sml.documentation"/>
+  		  </zeroOrMore>
+  		   <zeroOrMore>
+  			 <ref name="sml.history"/>
+  		  </zeroOrMore>
       </group>
   </define>
-
-
-   <!-- Common Property Attributes -->
-   <define name="sml.attributes">
-   	  <a:documentation>Attribute Group</a:documentation>
-		   <optional>
-			  <a:documentation>id</a:documentation>
-			  <attribute name="id">
-				 <data type="token"/>
-			  </attribute>
-		   </optional>               
-		   <optional>
-			  <a:documentation>definition</a:documentation>
-			  <attribute name="definition">
-				 <data type="anyURI"/>
-			  </attribute>
-		   </optional>               
-   </define>
    
    <define name="sml.label">
 		  <a:documentation>Label</a:documentation>
@@ -216,6 +214,11 @@
 			 <ref name="swe.extension"/>
 		  </zeroOrMore>
 		  -->
+		  <element name="sml:label">
+			 <data type="string">
+				<param name="minLength">1</param>
+			 </data>
+		  </element>
          <optional>
             <element name="sml:codeSpace">
                <ref name="xlink.href">
