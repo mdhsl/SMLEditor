@@ -202,6 +202,7 @@ html>body .gwt-DecoratedTabBar {
   background-image: url(sensormleditor/images/advanced.png);
   cursor: hand;
   cursor: pointer;
+  margin-top:2px;
 }
   
 .rng-optional-unselect {
@@ -393,7 +394,7 @@ td div.document-title-inner {
 }
 
 .graphic-icon {
-	margin-left:10px;
+	margin-right:10px;
 }
 
 .graph-dataarray-panel {
@@ -570,7 +571,6 @@ table.sml-mode-nolabel-vertical-panel {
 
 .section-panel .header td {
 	font-weight:bold;
-	font-size:17px;
 }
 
 .section-panel .header {
@@ -775,6 +775,10 @@ input:focus {
 	min-width:100px;
 }
 
+.attribute-panel-edit .gwt-HTML {
+	min-width:100px;
+}
+
 .edit-subsection-element-inner-panel {
 	margin-left:8px;
 }
@@ -811,4 +815,12 @@ input:focus {
 /** hide label element from the () header */
 .section-panel .header .advanced-simple-element-panel .gwt-HTML {
 	display: none;
+}
+
+.connection {
+	border-spacing: 5;
+}
+
+ .component .edit-subsection-element-inner-panel {
+	border-spacing: 5;
 }
