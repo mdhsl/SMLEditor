@@ -440,7 +440,7 @@ table.sml-mode-nolabel-vertical-panel {
 
 .ontology-table-result {
 	height: 100px;
-	width : 768px;
+	width : 100%;
 	margin-top:25px;
 	border-width:1px; 
  	border-style:solid; 
@@ -453,8 +453,13 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .ontology-table-panel {
-	height:475px;	
-	width: 800px;
+	height: 475px;
+    width: 650px;
+}
+
+.ontology-panel {
+	height: 475px;
+    width: 650px;
 }
 
 .edit-table-panel {
@@ -463,10 +468,11 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .chart-panel {
-	height:490px;	
-	width: 790px;
+	width:630px;
+	height:500px;
 	margin-top:10px;
 	margin-left:10px;
+	overflow:hidden !important;
 }
 .ontology-icon {
 	margin-left: 15px;	
@@ -542,6 +548,9 @@ table.sml-mode-nolabel-vertical-panel {
 		
 }
 
+.gwt-DialogBox .Caption {
+    padding: 8px 0px 4px 0px !important; /** override default title position for dialog **/
+}
 /* remove click onto disclosure header */
 /*table.gwt-DisclosurePanel-open>tbody>tr>td> a.header {
     width: 0px;
@@ -808,7 +817,7 @@ input:focus {
 .dialog-close {
 	background: transparent url(sensormleditor/images/remove.gif) no-repeat !important;
 	padding: 0 0 0 0 !important;
-	width:16px;
+	width:17px;
 	height:16px;
 }
 
@@ -823,4 +832,27 @@ input:focus {
 
  .component .edit-subsection-element-inner-panel {
 	border-spacing: 5;
+}
+
+/** For swe:AllowedValues **/
+.allowedValues .gwt-HTML{
+	font-style: italic;
+}
+
+.description-icon {
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.component .header-title-panel .gwt-HTML {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.section-panel .section-panel .gwt-DisclosurePanel .content {
+	border-left:0px !important;
+}
+
+.Point-panel {
+	border-spacing: 5px;
 }
