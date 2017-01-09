@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar
+   xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:gml="http://www.opengis.net/gml"
+   xmlns:gmd="http://www.isotc211.org/2005/gmd"
+   xmlns:gco="http://www.isotc211.org/2005/gco"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+   <!-- -->
+   <start>
+      <element name="gml:GML">
+         <ref name="gml.GmlObjectGroup"/>
+      </element>
+   </start>
+   
+   <!-- Object Group -->
+   <define name="gml.GmlObjectGroup">
+      <group>
+		  <optional>
+			 <ref name="gml.id"/>
+		  </optional>
+		  <optional>
+			 <ref name="gml.description"/>
+		  </optional>
+		  <zeroOrMore>
+			 <ref name="gml.name"/>
+		  </zeroOrMore>
+      </group>
+   </define>
+   
+   <!-- Position Object Group -->
+   <define name="gml.PositionObjectGroup">
+      <group>
+		  <ref name="gml.positionAttributes"/>
+		  <optional>
+			 <ref name="gml.description"/>
+		  </optional>
+		  <optional>
+		     <ref name="gml.identifier"/>
+		  </optional>
+		  <zeroOrMore>
+			 <ref name="gml.name"/>
+		  </zeroOrMore>
+      </group>
+   </define>
+   
+   <!-- position attributes -->
+   <define name="gml.positionAttributes">
+      <ref name="gml.id"/>		  
+      <optional>
+         <attribute name="gml:srsName">
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="gml:srsDimension">
+            <data type="positiveInteger"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="gml:axisLabels">
+            <data type="token"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="gml:uomLabels">
+            <data type="token"/>
+         </attribute>
+      </optional>
+   </define>
+
+   
+   <!-- ID -->
+   <define name="gml.id">
+      <a:documentation>Local ID (for further reference)</a:documentation>
+      <attribute name="gml:id">
+         <data type="ID"/>
+      </attribute>
+   </define>
+   
+   <!-- description -->
+   <define name="gml.description">
+      <a:documentation>Textual Description</a:documentation>
+      <element name="gml:description">
+         <data type="string">
+            <param name="minLength">1</param>
+         </data>
+      </element>
+   </define>
+   
+   <!-- identifier -->
+   <define name="gml.identifier">   
+	   <element name="gml:identifier">
+	      <attribute name="codeSpace">
+	         <data type="anyURI"/>
+	      </attribute>
+		  <data type="string">
+			<param name="minLength">1</param>
+		  </data>
+	   </element>	
+   </define>  
+
+   
+   <!-- name -->
+   <define name="gml.name">
+      <a:documentation>Display Name</a:documentation>
+      <element name="gml:name">
+         <data type="token">
+            <param name="minLength">1</param>
+         </data>
+      </element>
+   </define>
+   
+   <!-- Bounded By -->
+   <define name="gml.boundedBy">
+      <element name="gml:boundedBy">
+         <empty/>
+      </element>
+   </define>
+   
+   <!-- xlink href -->
+   <define name="xlink.href">
+      <a:documentation>By Reference</a:documentation>
+      <attribute name="xlink:href">
+			  <data type="anyURI">
+				  <param name="minLength">1</param>
+			  </data>
+		  </attribute>
+   </define>
+   
+   <!-- xlink href with title -->
+   <!-- Note: when href is present, title is required -->
+   <define name="xlink.hrefWithTitle">
+      <a:documentation>By Reference</a:documentation>
+      <group>
+         <attribute name="xlink:title">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
+         <attribute name="xlink:href">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
+      </group>
+   </define>
+   
+   <!-- xlink Roles -->
+   <define name="xlink.roles">
+      <a:documentation>support for roles</a:documentation>
+      <choice>
+         <attribute name="xlink:arcrole">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
+         <attribute name="xlink:role">
+           <data type="anyURI">
+             <param name="minLength">1</param>
+           </data>
+         </attribute>
+      </choice>
+   </define>
+   
+   <!-- xlink combo -->
+   <define name="gml.xlink">
+      <group>
+         <optional>
+            <ref name="xlink.href"/>
+         </optional>
+         <optional>
+            <ref name="xlink.roles"/> 
+         </optional>   
+      </group>
+   </define>
+   
+   <!-- Time Group -->
+   <define name="gml.TimeGroup">
+      <choice>
+         <ref name="gml.TimeInstant"/>
+         <ref name="gml.TimePeriod"/>
+      </choice>
+   </define>
+   
+   <!-- Time Instant -->
+   <define name="gml.TimeInstant">
+      <a:documentation>Time Instant</a:documentation>
+      <element name="gml:TimeInstant">
+         <ref name="gml.TimeContents"/>
+         <element name="gml:timePosition">
+            <ref name="gml.timePosition"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Time Period -->
+   <define name="gml.TimePeriod">
+      <a:documentation>Time Period</a:documentation>
+      <element name="gml:TimePeriod">
+         <ref name="gml.TimeContents"/>
+         <element name="gml:beginPosition">
+            <a:documentation>Begin</a:documentation>
+            <ref name="gml.timePosition"/>
+         </element>
+         <element name="gml:endPosition">
+            <a:documentation>End</a:documentation>
+            <ref name="gml.timePosition"/>
+         </element>
+         <optional>
+            <ref name="gml.timeLength"/>
+         </optional>
+      </element>
+   </define>
+   
+   <!-- Simple Time Period -->
+   <define name="gml.SimpleTimePeriod">
+      <element name="gml:TimePeriod">
+         <element name="gml:beginPosition">
+            <a:documentation>Begin</a:documentation>
+            <ref name="gml.simpleTimePosition"/>
+         </element>
+         <element name="gml:endPosition">
+            <a:documentation>End</a:documentation>
+            <ref name="gml.simpleTimePosition"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Time Length -->
+   <define name="gml.timeLength">
+      <choice>
+         <element name="gml:duration">
+            <data type="duration"/>
+         </element>
+         <element name="gml:timeInterval">
+            <attribute name="unit">
+               <choice>
+                  <value>year</value>
+                  <value>day</value>
+                  <value>hour</value>
+                  <value>minute</value>
+                  <value>second</value>
+               </choice>
+            </attribute>
+            <optional>
+               <attribute name="radix">
+                  <data type="positiveInteger"/>
+               </attribute>
+            </optional>
+            <optional>
+               <attribute name="factor">
+                  <data type="integer"/>
+               </attribute>
+            </optional>
+            <data type="decimal"/>
+         </element>
+      </choice>
+   </define>
+   
+   <!-- Simple Time Period -->
+   <define name="gml.simpleTimePosition">
+      <choice>
+         <attribute name="indeterminatePosition">
+            <a:documentation>to set time position to 'now'</a:documentation>
+            <value>now</value>
+         </attribute>
+         <data type="dateTime">
+            <a:documentation>to enter a fixed ISO8601 time</a:documentation>
+         </data>
+      </choice>
+   </define>
+   
+   <!-- Time Period -->
+   <define name="gml.timePosition">
+      <choice>
+         <attribute name="indeterminatePosition">
+            <ref name="gml.timeIndeterminateValueType"/>
+         </attribute>
+         <group>
+            <optional>
+               <attribute name="frame">
+                  <data type="anyURI"/>
+               </attribute>
+            </optional>
+            <optional>
+               <attribute name="calendarEraName">
+                  <data type="string"/>
+               </attribute>
+            </optional>
+            <choice>
+               <data type="dateTime"/>
+               <data type="time"/>
+            </choice>
+         </group>
+      </choice>
+   </define>
+   
+   <!--time Indeterminate Value -->
+   <define name="gml.timeIndeterminateValueType">
+      <choice>
+         <value>now</value>
+         <value>before</value>
+         <value>after</value>
+         <value>unknown</value>
+      </choice>
+   </define>
+   
+   <!-- Time Contents -->
+   <define name="gml.TimeContents">
+      <optional>
+         <ref name="gml.id"/>
+      </optional>
+      <optional>
+         <a:documentation>Time Frame</a:documentation>         
+         <attribute name="frame">
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <!-- Abstract CS definition -->
+   <define name="gml.AbstractCS">
+      <attribute name="gml:csID"/>
+      <element name="gml:csName">
+         <data type="string"/>
+      </element>
+      <optional>
+         <element name="csID">
+            <data type="ID"/>
+         </element>                        
+      </optional>
+      <optional>
+         <element name="gml:remarks">
+            <data type="string"/>
+         </element>
+      </optional>
+      <oneOrMore>
+         <element name="gml:usesAxis">
+            <choice>
+               <ref name="xlink.href"/>
+               <element name="gml:CoordinateSystemAxis">
+                  <ref name="gml.name"/>
+                  <optional>
+                     <element name="gml:axisID">
+                        <data type="ID"/>
+                     </element>                                 
+                  </optional>
+                  <optional>
+                     <element name="gml:remarks">
+                        <data type="string"/>
+                     </element>                                 
+                  </optional>
+                  <element name="gml:axisAbbrev">
+                     <data type="string"/>
+                  </element>
+               </element>
+            </choice>
+         </element>
+     </oneOrMore>   
+   
+   </define>
+   
+   
+   <!-- Abstract Datum definition -->
+   
+   <define name="gml.AbstractDatum">
+      
+      <choice>
+         <ref name="xlink.href"/>
+         <element name="gml:EngineeringDatum">
+            <attribute name="gml:id"/>
+            <element name="gml:datumName">
+               <data type="string"/>
+            </element>
+            <oneOrMore>
+               <element name="gml:datumID">
+                  <data type="ID"/>
+               </element> 
+            </oneOrMore>
+            <optional>
+               <element name="gml:remarks">
+                  <data type="string"/>
+               </element>                     
+            </optional>
+            <optional>
+               <element name="gml:anchorPoint">
+                  <data type="string"/>
+               </element>                  
+            </optional>                 
+         </element>
+      </choice>      
+   
+   </define>
+   
+   <!-- Spatial Reference Frame -->
+   <define name="gml.spatialFrame">
+      <element name="gml:EngineeringCRS">
+         <attribute name="gml:srsID"/>
+         <zeroOrMore>
+            <element name="gml:remarks">
+               <data type="string"/>
+            </element>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="gml.name"/>
+         </zeroOrMore>
+         <element name="gml:usesCS">
+            <choice>
+               <ref name="xlink.href"/>
+               <element name="gml:CartesianCS">
+                  <ref name="gml.AbstractCS"/>
+               </element>   
+            </choice>
+         </element>        
+         <element name="gml:usesEngineeringDatum">
+            <choice>
+               <ref name="xlink.href"/>
+               <element name="EngineeringDatum">
+                  <ref name="gml.AbstractDatum"/>                                 
+               </element>
+            </choice>
+         </element>
+      </element>  
+   </define>  
+   
+   <!--  -->
+   
+      
+   
+   <!-- Time Coordinate System -->
+   <!-- MOST LIKELY TIME REF SYSTEM -->
+   <define name="gml.TimeCoordinateSystem">
+      <element name="gml:TimeCoordinateSystem">
+         <ref name="gml.GmlObjectGroup"/>
+         <optional>
+            <element name="gml:remarks">
+               <data type="string"/>
+            </element>
+         </optional>
+         <element name="gml:domainOfValidity">
+            <data type="string"/>
+         </element>
+         <element name="gml:origin">
+            <ref name="gml.TimeInstant"/>
+         </element>
+         <element name="gml:interval">
+            <element name="gml:unit">
+               <ref name="gml.TimeUnit"/>
+            </element>
+            <optional>
+               <element name="gml:radix">
+                  <data type="positiveInteger"/>
+               </element>
+            </optional>
+            <optional>
+               <element name="gml:factor">
+                  <data type="integer"/>
+               </element>
+            </optional>
+         </element> 
+      </element>
+   </define>
+   
+   <!-- Time Unit  -->
+   <!-- NOTE: this needs to be better defined:
+   <simpleType name="TimeUnitType">
+  <union>
+    <simpleType>
+      <restriction base="string">
+        <enumeration value="year"/>
+        <enumeration value="month"/>
+        <enumeration value="day"/>
+        <enumeration value="hour"/>
+        <enumeration value="minute"/>
+        <enumeration value="second"/>
+      </restriction>
+    </simpleType>
+    <simpleType>
+      <restriction base="string">
+        <pattern value="other:\w{2,}"/>
+      </restriction>
+    </simpleType>
+  </union>
+</simpleType>
+-->
+   <define name="gml.TimeUnit">
+      <data type="string"/>   
+   </define>
+
+
+   
+   
+   <!-- TODO: ADD LOCATION -->
+   <!-- <define name="gml.location"/> -->
+   
+   <!-- gco:CharacterString -->
+   <define name="gco.characterString">
+      <element name="gco:CharacterString">
+         <data type="string"/>          
+      </element>
+   </define>
+   
+   <!-- Code Attributes -->
+   <define name="gco.codeAttributes">
+      <group>
+         <attribute name="codeList">
+            <data type="anyURI"/>
+         </attribute>
+         <attribute name="codeListValue">
+            <data type="anyURI"/>
+         </attribute>
+         <optional>
+            <attribute name="codeSpace">
+               <data type="anyURI"/>
+            </attribute>
+         </optional>
+      </group>
+   </define>      
+ 
+   
+   <!-- MD_LegalConstraints -->
+   <define name="gmd.MD_LegalConstraints">
+      <element name="gmd:MD_LegalConstraints">
+		  <ref name="gml.idGroup"/>
+		  <zeroOrMore>
+			 <element name="gmd:useLimitation">
+				<ref name="gco.codeAttributes"/>
+			 </element>
+		  </zeroOrMore>
+		  <zeroOrMore>
+			 <element name="gmd:accessConstraints">
+				<ref name="gco.codeAttributes"/>
+			 </element>
+		  </zeroOrMore>
+		  <zeroOrMore>
+			 <element name="gmd:useConstraints">
+				<ref name="gco.codeAttributes"/>
+			 </element>
+		  </zeroOrMore>
+		  <zeroOrMore>
+			 <element name="gmd:otherConstraints">
+				<ref name="gco.codeAttributes"/>
+			 </element>
+		  </zeroOrMore>
+      </element>
+   </define>
+   
+   <!-- gmd Responsible Party -->
+   <define name="gmd.CI_ResponsibleParty">
+      <element name="gmd:CI_ResponsibleParty">
+		  <optional>
+			 <ref name="gml.id"/>
+		  </optional>
+		  <optional>
+			 <ref name="gml.uuid"/>
+		  </optional>
+		  <optional>
+			 <element name="gmd:individualName">
+				<ref name="gco.characterString"/>
+			 </element>
+		  </optional>
+		   <optional>
+			 <element name="gmd:organisationName">
+				<ref name="gco.characterString"/>
+			 </element>
+		  </optional>
+		  <optional>
+			 <element name="gmd:positionName">
+				<ref name="gco.characterString"/>
+			 </element>
+		  </optional>
+		  <optional>
+			 <element name="gmd:contactInfo">
+				<optional>
+				   <ref name="xlink.roles"/>
+				</optional>
+				<choice>
+				   <a:documentation>Inline or By Reference</a:documentation>
+				   <ref name="xlink.href"/>
+				   <ref name="gmd.CI_Contact"/>
+				</choice>                  
+			 </element>
+		  </optional>  
+		  <element name="gmd:role">
+			 <element name="gmd:CI_RoleCode">
+				<ref name="gco.codeAttributes"/>
+			 </element>     
+		  </element>
+      </element>
+   </define>
+   
+   <!-- CI_Contact -->
+   <define name="gmd.CI_Contact">
+      <element name="gmd:CI_Contact">
+         <ref name="gml.idGroup"/>
+		 <optional>
+			 <element name="gmd:phone">
+			    <ref name="gml.xlink"/>
+				<ref name="gmd.CI_Telephone"/>
+			 </element>
+		 </optional>
+		 <optional>
+			 <element name="gmd:address">
+			    <ref name="gml.xlink"/>
+				<ref name="gmd.CI_Address"/>
+			 </element>
+		 </optional>
+		 <optional>
+			 <element name="gmd:onlineResource">
+			    <ref name="gml.xlink"/>
+				<ref name="gmd.CI_OnlineResource"/>
+			 </element>
+		 </optional>
+ 		 <optional>
+			 <element name="gmd:hoursOfService">
+				<ref name="gco.characterString"/>
+			 </element>
+		 </optional>
+		 <optional>
+			 <element name="gmd:contactInstructions">
+				<ref name="gco.characterString"/>
+			 </element>
+		 </optional>    
+      </element>
+   </define>
+   
+   <!-- CI_Telephone -->
+   <define name="gmd.CI_Telephone">
+      <element name="gmd:CI_Telephone">
+         <ref name="gml.idGroup"/>
+         <zeroOrMore>
+			 <element name="gmd:voice">
+				<ref name="gco.characterString"/>
+			</element>
+        </zeroOrMore>
+        <zeroOrMore>
+			 <element name="gmd:facsimile">
+				<ref name="gco.characterString"/>
+			</element>              
+        </zeroOrMore>
+      </element>
+    </define>
+ 
+ 
+    <!-- CI_Address -->
+   <define name="gmd.CI_Address">
+      <element name="gmd:CI_Address">
+         <ref name="gml.idGroup"/>
+         <zeroOrMore>
+			 <element name="gmd:deliveryPoint">
+				<ref name="gco.characterString"/>
+			</element>
+        </zeroOrMore>
+        <optional>
+			 <element name="gmd:city">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+         <optional>
+			 <element name="gmd:administrativeArea">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+        <optional>
+			 <element name="gmd:postalCode">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+        <optional>
+			 <element name="gmd:country">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+        <optional>
+			 <element name="gmd:electronicMailAddress">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+     </element>
+    </define>
+
+
+   <!-- CI_OnlineResource -->
+   <define name="gmd.CI_OnlineResource">
+      <element name="gmd:CI_OnlineResource">
+         <ref name="gml.idGroup"/>
+		 <element name="gmd:linkage">
+			<data type="anyURI"/>
+		 </element>              
+         <optional>
+			 <element name="gmd:protocol">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+        <optional>
+			 <element name="gmd:applicationProfile">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+        <optional>
+			 <element name="gmd:name">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+        <optional>
+			 <element name="gmd:description">
+				<ref name="gco.characterString"/>
+			</element>              
+        </optional>
+        <optional>
+			 <element name="gmd:function">
+				<element name="gmd:CI_OnLineFunctionCode">
+				   <ref name="gco.codeAttributes"/>
+				</element>
+			</element>              
+        </optional>    
+      </element>
+    </define>
+
+    <!-- Point -->
+    <define name="gml.Point">
+       <element name="gml:Point">
+          <ref name="gml.PositionObjectGroup"/>
+			<element name="gml:pos">
+			   <!-- two to three CSV doubles -->
+			   <data type="string"/>
+			</element>  
+       </element>
+    </define>
+
+   
+</grammar>

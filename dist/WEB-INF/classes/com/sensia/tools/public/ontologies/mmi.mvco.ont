@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://mmisw.org/ont/mvco/properties/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:omv="http://omv.ontoware.org/2005/05/ontology#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:omvmmi="http://mmisw.org/ont/mmi/20081020/ontologyMetadata/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xml:base="http://mmisw.org/ont/mvco/properties">
+    <owl:Ontology rdf:about="">
+        <dc:description>Description of properties output by the MVCO ADCP Waves system</dc:description>
+        <omv:description>Description of properties output by the MVCO ADCP Waves system</omv:description>
+        <omv:keywords>waves, wave height, wave direction, water depth, ADCP, Doppler</omv:keywords>
+        <omvmmi:creditRequired>not specified</omvmmi:creditRequired>
+        <omv:hasCreator>Janet Fredericks</omv:hasCreator>
+        <dc:date>2013-04-02T18:17:54+0000</dc:date>
+        <omv:name>MVCO Waves Property Descriptions</omv:name>
+        <omvmmi:shortNameUri>properties</omvmmi:shortNameUri>
+        <omv:hasContributor>Janet Fredericks</omv:hasContributor>
+        <omvmmi:temporaryMmiRole>content manager</omvmmi:temporaryMmiRole>
+        <omvmmi:hasContentCreator>Janet Fredericks</omvmmi:hasContentCreator>
+        <omvmmi:hasResourceType>properties</omvmmi:hasResourceType>
+        <dc:contributor>Janet Fredericks</dc:contributor>
+        <omvmmi:contactRole>content manager</omvmmi:contactRole>
+        <omv:acronym>properties</omv:acronym>
+        <omvmmi:contact>Janet Fredericks</omvmmi:contact>
+        <omv:creationDate>2016-03-07T02:28:28+0000</omv:creationDate>
+        <omvmmi:origVocManager>Janet Fredericks</omvmmi:origVocManager>
+        <dc:creator>Janet Fredericks</dc:creator>
+        <omv:version>20130402T181754</omv:version>
+        <omv:uri>http://mmisw.org/ont/mvco/properties</omv:uri>
+        <omvmmi:origMaintainerCode>mvco</omvmmi:origMaintainerCode>
+        <omv:usedOntologyEngineeringTool rdf:resource="http://mmisw.org/ont/mmi/20081020/ontologyMetadata/voc2rdf"/>
+    </owl:Ontology>
+    <owl:Class rdf:about="http://mmisw.org/ont/mvco/properties/Properties">
+        <rdfs:label>Properties</rdfs:label>
+    </owl:Class>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/Definition">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>Definition</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/Figure_s">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>Figure_s</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/LongName">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>LongName</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/Equations_s">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>Equations_s</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/ID">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>ID</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/Symbol">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>Symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/Reference">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>Reference</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/ShortName">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>ShortName</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://mmisw.org/ont/mvco/properties/Category">
+        <rdfs:domain rdf:resource="http://mmisw.org/ont/mvco/properties/Properties"/>
+        <rdfs:label>Category</rdfs:label>
+    </owl:DatatypeProperty>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/swellPeriod">
+        <Definition>The wave period of swell computed from spectral analysis (1/FPD, with 0.05 &lt; f &lt; 0.15 Hz)</Definition>
+        <LongName>swellPeriod</LongName>
+        <Equations_s>(sum(f*Snn.*df)/sum(Snn.*df)) for  (0.05 &lt; f &lt; 0.15) Snn from surface velocity</Equations_s>
+        <Symbol>1/FPD</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Tbar_swell</ShortName>
+        <ID>swellPeriod</ID>
+        <rdfs:label>swellPeriod</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/hiCutoffFrequency">
+        <Definition>Maximum frequency used in computing wave height from singlet processing of the ADCP pressure time series</Definition>
+        <LongName>hiCutoffFrequency</LongName>
+        <Symbol>fmax</Symbol>
+        <ShortName>fmax</ShortName>
+        <ID>hiCutoffFrequency</ID>
+        <rdfs:label>hiCutoffFrequency</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/meanSeaWaterPressure">
+        <Definition>the mean pressure observed by the ADCP_Pressure sensor (uses a nominal value to correct for atmospheric pressure) during the period of the processing</Definition>
+        <LongName>meanSeaWaterPressure</LongName>
+        <Symbol>(h-z)</Symbol>
+        <ShortName>Pm</ShortName>
+        <ID>meanSeaWaterPressure</ID>
+        <rdfs:label>meanSeaWaterPressure</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/wavePeriodFromPressure">
+        <Definition>The wave period computed from singlet processing of the ADCP pressure timeseries (TP)</Definition>
+        <LongName>wavePeriodPressure</LongName>
+        <Symbol>TP</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Tbar_p</ShortName>
+        <ID>wavePeriodFromPressure</ID>
+        <rdfs:label>wavePeriodFromPressure</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/windWavePeriod">
+        <Definition>The wave period of wind computed from ADCP velocity spectral analysis (1/FPD, with 0.15 &lt; f &lt; 0.25 Hz)</Definition>
+        <LongName>windWavePeriod</LongName>
+        <Equations_s>(sum(f*Snn.*df)/sum(Snn.*df)) for    (0.15 &lt; f &lt; 0.25) Snn from surface velocity</Equations_s>
+        <Symbol>1/FPD</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Tbar_wind</ShortName>
+        <ID>windWavePeriod</ID>
+        <rdfs:label>windWavePeriod</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/loCutoffFrequency">
+        <Definition>Minimum frequency used in computing wave height from singlet processing of the ADCP pressure time series</Definition>
+        <LongName>loCutoffFrequency</LongName>
+        <Symbol>fmin</Symbol>
+        <ShortName>fmin</ShortName>
+        <ID>loCutoffFrequency</ID>
+        <rdfs:label>loCutoffFrequency</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/swellDirection">
+        <Definition>The direction of swell from North True computed from PUV triplet analysis for swell (ALPHA, for 0.05 &lt; f &lt; 0.15 Hz)</Definition>
+        <LongName>swellDirection</LongName>
+        <Symbol>ALPHA</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Dir_swell</ShortName>
+        <ID>swellDirection</ID>
+        <rdfs:label>swellDirection</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/bottomBinHeight">
+        <Definition>The height of the bin used in the computation of wave directions (PUV triplet analysis)</Definition>
+        <LongName>bottomBinHeight</LongName>
+        <ShortName>vht2</ShortName>
+        <ID>bottomBinHeight</ID>
+        <rdfs:label>bottomBinHeight</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/swell">
+        <Definition>The surface wave height from ADCP velocity spectral analysis over low frequencies (HM0, with 0.05 &lt; f &lt; 0.15 Hz)</Definition>
+        <LongName>swell</LongName>
+        <Equations_s>4*sqrt(sum(Snn).*dF) (0.05 &lt; f &lt; 0.15) Snn from surface velocity</Equations_s>
+        <Symbol>Hmo</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>swell</ShortName>
+        <ID>swell</ID>
+        <rdfs:label>swell</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/beamIntensity">
+        <Definition>The  beam (or echo) intensity or signal strength at each bin height</Definition>
+        <LongName>beamIntensity</LongName>
+        <Symbol>I</Symbol>
+        <ShortName>I</ShortName>
+        <ID>beamIntensity</ID>
+        <rdfs:label>beamIntensity</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/seaWaterPressure">
+        <Definition>seawater pressure</Definition>
+        <LongName>SeaWaterPressure</LongName>
+        <Symbol>P</Symbol>
+        <ShortName>P</ShortName>
+        <ID>seaWaterPressure</ID>
+        <rdfs:label>seaWaterPressure</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/dominantWaveDirection">
+        <Definition>The angle of the waves (direction from North True) computed from PUV triplet analysis (ALPHA, using PUV from 4.7 mab/~8m depth)</Definition>
+        <LongName>DominantWaveDirection</LongName>
+        <Symbol>ALPHA</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Dir_all</ShortName>
+        <ID>dominantWaveDirection</ID>
+        <rdfs:label>dominantWaveDirection</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/wavePeriodAll">
+        <Definition>The wave period of swell computed from spectral analysis (1/FPD, with 0.05 &lt; f &lt; 0.5 Hz)</Definition>
+        <LongName>Wave Period</LongName>
+        <Equations_s>(sum(f*Snn.*df)/sum(Snn.*df)) for  (f &gt; 0.05) Snn from surface velocity</Equations_s>
+        <Symbol>1/FPD</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Tbar</ShortName>
+        <ID>wavePeriodAll</ID>
+        <rdfs:label>wavePeriodAll</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/topBinHeight">
+        <Definition>The height of the bin used in the computation of surface spectra</Definition>
+        <LongName>topBinHeight</LongName>
+        <ShortName>vht1</ShortName>
+        <ID>topBinHeight</ID>
+        <rdfs:label>topBinHeight</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/correlationCoefficient">
+        <Definition>A measure of correlation using the RDI ADCP broadband technology that indicates quality of the signal</Definition>
+        <LongName>correlationCoefficient</LongName>
+        <Symbol>CC</Symbol>
+        <ShortName>CC</ShortName>
+        <ID>correlationCoefficient</ID>
+        <rdfs:label>correlationCoefficient</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/waveHeightAll">
+        <Definition>Significant wave height defined as the average of the highest one-therd of the wave heights from ADCP velocity spectral analysis calculated  as HM0 (0.05 &lt; f &lt; 0.5 Hz)</Definition>
+        <LongName>Wave Height</LongName>
+        <Equations_s>4*sqrt(sum(Snn).*dF) (f &gt; 0.05) Snn from surface velocity</Equations_s>
+        <Symbol>Hmo</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Hs_all</ShortName>
+        <ID>waveHeightAll</ID>
+        <rdfs:label>waveHeightAll</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/windWaves">
+        <Definition>Wind waves calculated  from ADCP velocity spectral analysis over high frequencies (HM0, with 0.15 &lt; f &lt; 0.25 Hz)</Definition>
+        <LongName>windWaves</LongName>
+        <Equations_s>4*sqrt(sum(Snn).*dF)   (0.15 &lt; f &lt; 0.25) Snn from surface velocity</Equations_s>
+        <Symbol>Hmo</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>windWaves</ShortName>
+        <ID>windWaves</ID>
+        <rdfs:label>windWaves</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/waveHeightFromPressure">
+        <Definition>The wave height computed from singlet processing of the ADCP pressure timeseries (HM0)</Definition>
+        <LongName>waveHeightPressure</LongName>
+        <Symbol>Hmo</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989;http://mmisw.org/ont/mvco/reference/Dean_1984</Reference>
+        <ShortName>Hs_p</ShortName>
+        <ID>waveHeightFromPressure</ID>
+        <rdfs:label>waveHeightFromPressure</rdfs:label>
+    </Properties>
+    <Properties rdf:about="http://mmisw.org/ont/mvco/properties/windWaveDirection">
+        <Definition>The direction of wind waves from North True computed from PUV triplet analysis (ALPHA, for 0.15 &lt; f &lt; 0.25 Hz)</Definition>
+        <LongName>windWaveDirection</LongName>
+        <Symbol>ALPHA</Symbol>
+        <Reference>http://mmisw.org/ont/q2o/reference/IAHR_1989</Reference>
+        <ShortName>Dir_wind</ShortName>
+        <ID>windWaveDirection</ID>
+        <rdfs:label>windWaveDirection</rdfs:label>
+    </Properties>
+</rdf:RDF>
