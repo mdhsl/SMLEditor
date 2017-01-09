@@ -97,9 +97,11 @@
    <!--==========================================================-->
    <!--- Valid Time in this context applies to this document -->
    <sml:validTime>
-      <gml:TimeInstant gml:id="validTime">
-         <gml:timePosition indeterminatePosition="after">2009-03-20</gml:timePosition>
-      </gml:TimeInstant>
+   	  <sml:TimeInstantOrPeriod>
+	      <gml:TimeInstant gml:id="validTime">
+	         <gml:timePosition indeterminatePosition="after">2009-03-20</gml:timePosition>
+	      </gml:TimeInstant>
+      </sml:TimeInstantOrPeriod>
    </sml:validTime>
 
    <!--==========================================================-->
