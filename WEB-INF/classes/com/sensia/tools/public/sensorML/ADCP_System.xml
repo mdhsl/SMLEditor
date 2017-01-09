@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<sml:AggregateProcess gml:id="whoi_mvco_adcpProcessingSystem" xml:lang="en"
+    definition="http://sensorml.com/def/sensor/processingSystem"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:gmd="http://www.isotc211.org/2005/gmd"
+    xmlns:gco="http://www.isotc211.org/2005/gco"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:ism="urn:us:gov:ic:ism"
+    xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/aggregate_process.xsd">
+
+    <!-- ================================================= -->
+    <!--                  System Description               -->
+    <!-- ================================================= -->
+    <gml:description>
+        Full processing system for the ADCP deployment at MVCO, version 2.2, including processing chain for QA/QC testing
+    </gml:description>
+    <gml:identifier codeSpace="uniqueID">urn:whoi:mvco:adcpProcessingSystem</gml:identifier>
+    <gml:name>ADCP Observation and Processing System</gml:name>
+    <sml:keywords>
+        <sml:KeywordList>
+            <sml:keyword>QC</sml:keyword>
+            <sml:keyword>oceanographic</sml:keyword>
+            <sml:keyword>waves</sml:keyword>
+            <sml:keyword>pressure</sml:keyword>
+        </sml:KeywordList>
+    </sml:keywords>
+
+    <!--~~~~~~~~~~~~~~~-->
+    <!-- System Inputs -->
+    <!--~~~~~~~~~~-~~~~-->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="seaWaterPressure">
+                <sml:ObservableProperty
+                    definition="http://mmisw.org/ont/mvco/observableProperty/seaWaterPressure">
+                    <swe:label>Seawater Pressure</swe:label>
+                    <swe:description>forces on a particular point including sea water and air pressure</swe:description>
+                </sml:ObservableProperty>
+            </sml:input>
+            <sml:input name="seaWaterTemperature">
+                <sml:ObservableProperty
+                    definition="http://mmisw.org/ont/mvco/observableProperty/seaWaterTemperature">
+                    <swe:label>Seawater Temperature</swe:label>
+                    <swe:description>heat energy of sea water</swe:description>
+                </sml:ObservableProperty>
+            </sml:input>
+            <sml:input name="volumetricBackscatter">
+                <sml:ObservableProperty
+                    definition="http://mmisw.org/ont/mvco/observableProperty/volumetricBackscatter">
+                    <swe:label>Volumetric Backscatter</swe:label>
+                    <swe:description>portion of an acoustic signal that is returned by hitting a particler</swe:description>
+                </sml:ObservableProperty>
+            </sml:input>
+            <sml:input name="particleMotion">
+                <sml:ObservableProperty
+                    definition="http://mmisw.org/ont/mvco/observableProperty/particleMotion">
+                    <swe:label>Particle Motion</swe:label>
+                    <swe:description>three dimensional movement of a particle in a fluid</swe:description>
+                </sml:ObservableProperty>
+            </sml:input>
+            <sml:input name="tilt">
+                <sml:ObservableProperty
+                    definition="http://mmisw.org/ont/rdi/observableProperty/tilt">
+                    <swe:label>Sensor Tilt</swe:label>
+                    <swe:description>tilt of sensor</swe:description>
+                </sml:ObservableProperty>
+            </sml:input>
+            <sml:input name="heading">
+                <sml:ObservableProperty
+                    definition="http://mmisw.org/ont/rdi/observableProperty/heading">
+                    <swe:label>Sensor Heading</swe:label>
+                    <swe:description>heading of sensor</swe:description>
+                </sml:ObservableProperty>
+            </sml:input>
+        </sml:InputList>
+    </sml:inputs>
+
+    <!--~~~~~~~~~~~~~~~~-->
+    <!-- System Outputs -->
+    <!--~~~~~~~~~~-~~-~~-->
+    <sml:outputs>
+        <sml:OutputList>
+            
+            <!-- NOTE: location doesn't belong hardwired here - meb -->
+            <!-- should come from sensor instance description  
+            <sml:output name="systemOutputs">
+                <swe:DataRecord>
+                    <swe:label>Time-tagged Location</swe:label>
+                    <swe:field name="time">
+                        <swe:Time definition="http://www.opengis.net/def/property/OGC/0/SamplingTime"
+                            referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+                            <swe:label>Sampling Time</swe:label>
+                            <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian"/>
+                        </swe:Time>
+                    </swe:field>
+                    <swe:field name="location">
+                        <swe:Vector definition="http://sweet.jpl.nasa.gov/2.0/space.owl#Location"
+                            referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326">
+                            <swe:label>Observation Location</swe:label>
+                            <swe:coordinate name="lat">
+                                <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Latitude" axisID="Lat">
+                                    <swe:label>Latitude</swe:label>
+                                    <swe:uom xlink:href="deg"/>
+                                    <swe:value>45.36</swe:value>
+                                </swe:Quantity>
+                            </swe:coordinate>
+                            <swe:coordinate name="lon">
+                                <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Longitude" axisID="Long">
+                                    <swe:label>Longitude</swe:label>
+                                    <swe:uom code="deg"/>
+                                    <swe:value>5.2</swe:value>
+                                </swe:Quantity>
+                            </swe:coordinate>
+                        </swe:Vector> 
+                    </swe:field>
+               </swe:DataRecord>
+            </sml:output>
+            -->
+
+            <sml:output name="Pressure_QC_ChainOutputs">
+                <swe:DataRecord>
+                    <swe:label>Pressure QC Output</swe:label>
+                    <swe:field name="cleanedPressureTimeSeries">
+                        <!-- This is optional to ADCP systems -->
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/meanSeaWaterPressure">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="dataGapFlag">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/qcflag/dataGapFlag">
+                            <swe:codeSpace xlink:href="http://mmisw.org/ont/mvco/flag"/>
+                        </swe:Category>
+                    </swe:field>
+                    <swe:field name="aggregatePressureFlag">
+                        <swe:Category
+                            definition="http://mmisw.org/ont/mvco/qcflag/aggregatePressureFlag">
+                            <swe:codeSpace xlink:href="http://mmisw.org/ont/mvco/flag"/>
+                        </swe:Category>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:output>
+
+            <sml:output name="PressureObsProcessOutputs">
+                <swe:DataRecord>
+                    <swe:label>Seawater Pressure Observation</swe:label>
+                    <!-- this should be single value -->
+                    <swe:field name="meanSeaWaterPressure">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/meanSeaWaterPressure">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="waveHeightFromPressure">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/waveHeightFromPressure">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="wavePeriodFromPressure">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/wavePeriodFromPressure">
+                            <swe:uom code="s"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="loCutoffFrequency">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/loCutoffFrequency">
+                            <swe:uom code="Hz"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="hiCutoffFrequency">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/hiCutoffFrequency">
+                            <swe:uom code="Hz"/>
+                        </swe:Quantity>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:output>
+
+            <sml:output name="Velocity_QC_ChainOutputs">
+                <swe:DataRecord>
+                    <swe:label>Velocity QC Output</swe:label>
+                    <swe:field name="interpolatedVelocityTimeSeries">
+                        <swe:Quantity definition="urn:ogc:property:OGC:velocity">
+                            <swe:uom code="cm/s"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="topBinHeight">
+                        <swe:Quantity definition="http://mmisw.org/ont/mvco/properties/topBinHeight">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="aggregateVelocityFlag">
+                        <swe:Category
+                            definition="http://mmisw.org/ont/mvco/qcflag/aggregateVelocityFlag">
+                            <swe:codeSpace xlink:href="http://mmisw.org/ont/mvco/flag"/>
+                        </swe:Category>
+                    </swe:field>
+                    <swe:field name="echoIntensityFlag">
+                        <swe:Category
+                            definition="http://mmisw.org/ont/mvco/qcflag/echoIntensityFlag">
+                            <swe:codeSpace xlink:href="http://mmisw.org/ont/mvco/flag"/>
+                        </swe:Category>
+                    </swe:field>
+                    <swe:field name="cMFlag">
+                        <swe:Category definition="http://mmisw.org/ont/mvco/qcflag/cMFlag">
+                            <swe:codeSpace xlink:href="http://mmisw.org/ont/mvco/flag"/>
+                        </swe:Category>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:output>
+
+            <sml:output name="VelocityObsProcessOutputs">
+                <swe:DataRecord>
+                    <swe:label>Velocity Observation</swe:label>
+                    <swe:field name="waveHeightAll">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/waveHeightAll">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="swell">
+                        <swe:Quantity definition="http://mmisw.org/ont/mvco/properties/swell">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="windWaves">
+                        <swe:Quantity definition="http://mmisw.org/ont/mvco/properties/windWaves">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="wavePeriodAll">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/wavePeriodAll">
+                            <swe:uom code="s"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="swellPeriod">
+                        <swe:Quantity definition="http://mmisw.org/ont/mvco/properties/swellPeriod">
+                            <swe:uom code="s"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="windWavePeriod">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/windWavePeriod">
+                            <swe:uom code="s"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="dominantWaveDirection">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/dominantWaveDirection">
+                            <swe:uom code="deg"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="swellDirection">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/swellDirection">
+                            <swe:uom code="deg"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="windWaveDirection">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/windWaveDirection">
+                            <swe:uom code="deg"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="topBinHeight">
+                        <swe:Quantity definition="http://mmisw.org/ont/mvco/properties/topBinHeight">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="bottomBinHeight">
+                        <swe:Quantity
+                            definition="http://mmisw.org/ont/mvco/properties/bottomBinHeight">
+                            <swe:uom code="cm"/>
+                        </swe:Quantity>
+                    </swe:field>
+
+                </swe:DataRecord>
+            </sml:output>
+
+        </sml:OutputList>
+    </sml:outputs>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Sensor and Process Components -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~-~~-~~-->
+    
+    <sml:components>
+        <sml:ComponentList>
+            <sml:component name="MVCO_Workhorse" 
+                xlink:title="urn:whoi:mvco:workhorse_1200"
+                xlink:role="http://sensorml.com/def/sensor/observationSystem"
+                xlink:href="http://www.sensorML.com/2.0/mvco/sensor/MVCO_Workhorse_1200.xml"/>
+            <!-- NOTE -->
+            <!-- In this case it's either coming from the MVCO Workhorse or we're describing a general process chain 
+            <sml:component name="RDI_Workhorse" 
+                xlink:title="teledyne_rdi_workhorse_1200"
+                xlink:role="http://sensorml.com/def/sensor/observationSystem"
+                xlink:href="http://www.sensorML.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml"/> -->
+            <sml:component name="Velocity_QC_Chain" 
+                xlink:title="urn:whoi:mvco:q2o_velocity_qc"
+                xlink:role="http://sensorml.com/def/process/qualityControl"
+                xlink:href="http://www.sensorML.com/2.0/mvco/process/Velocity_QC_Chain.xml"/>
+            <sml:component name="Pressure_QC_Chain" 
+                xlink:title="urn:whoi:mvco:q2o_pressure_qc"
+                xlink:role="http://sensorml.com/def/process/qualityControl"
+                xlink:href="http://www.sensorML.com/2.0/mvco/process/Pressure_QC_Chain.xml"/>
+            <sml:component name="PressureObservableProcess"
+                xlink:title="urn:whoi:mvco:mvco_pressure_process"
+                xlink:role="http://sensorml.com/def/process/observationProcessing"
+                xlink:href="http://www.sensorML.com/2.0/mvco/process/Pressure_Obs_Process.xml"/>
+            <sml:component name="VelocityObservableProcess"
+                xlink:title="urn:whoi:mvco:mvco_velocity_process"
+                xlink:role="http://sensorml.com/def/process/observationProcessing"
+                xlink:href="http://www.sensorML.com/2.0/mvco/process/Velocity_Obs_Process.xml"/>
+            <sml:component name="PUV_Analysis" 
+                xlink:title="urn:whoi:mvco:mvco_puv_analysis"
+                xlink:role="http://sensorml.com/def/process/observationProcessing"
+                xlink:href="http://www.sensorML.com/2.0/mvco/process/PUV_Analysis.xml" />
+        </sml:ComponentList>
+    </sml:components>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Process Chain Connections     -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~-~~-~~-->
+    
+    <sml:connections>
+        <sml:ConnectionList>
+            <!--  Workhorse connections -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="this/inputs/seaWaterPressure"/>
+                    <sml:destination ref="MVCO_Workhorse/inputs/seaWaterPressure"/>
+                    <!-- Start here !! -->
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="this/inputs/temperature"/>
+                    <sml:destination ref="MVCO_Workhorse/inputs/temperature"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="this/inputs/volumetricBackscatter"/>
+                    <sml:destination ref="MVCO_Workhorse/inputs/volumetricBackscatter"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="this/inputs/particleMotion"/>
+                    <sml:destination ref="MVCO_Workhorse/inputs/particleMotion"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="this/inputs/tilt"/>
+                    <sml:destination ref="MVCO_Workhorse/inputs/tilt"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="this/inputs/heading"/>
+                    <sml:destination ref="MVCO_Workhorse/inputs/heading"/>
+                </sml:Link>
+            </sml:connection>
+
+            <!--  Pressure_QC_Chain connections -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="MVCO_Workhorse/outputs/pressureTimeSeries"/>
+                    <sml:destination ref="Pressure_QC_Chain/inputs/pressureTimeSeries"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="Pressure_QC_Chain/outputs/aggregatePressureFlag"/>
+                    <sml:destination ref="this/outputs/flags/aggregatePressureFlag"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="Pressure_QC_Chain/outputs/cleanedPressureTimeSeries"/>
+                    <sml:destination
+                        ref="PressureObservableProcess/inputs/interpolatedPressureTimeSeries"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="Pressure_QC_Chain/outputs/cleanedPressureTimeSeries"/>
+                    <sml:destination
+                        ref="VelocityObservableProcess/inputs/interpolatedPressureTimeSeries"/>
+                </sml:Link>
+            </sml:connection>
+
+            <!--  PressureObservableProcess connections -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="PressureObservableProcess/outputs/waveHeightFromPressure"/>
+                    <sml:destination
+                        ref="this/outputs/PressureObsProcessOutputs/waveHeightFromPressure"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="PressureObservableProcess/outputs/wavePeriodFromPressure"/>
+                    <sml:destination
+                        ref="this/outputs/PressureObsProcessOutputs/wavePeriodFromPressure"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="PressureObservableProcess/outputs/loCutoffFrequency"/>
+                    <sml:destination ref="this/outputs/PressureObsProcessOutputs/loCutoffFrequency"
+                    />
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="PressureObservableProcess/outputs/hiCutoffFrequency"/>
+                    <sml:destination ref="this/outputs/PressureObsProcessOutputs/hiCutoffFrequency"
+                    />
+                </sml:Link>
+            </sml:connection>
+
+            <!--  Velocity_QC_Chain connections -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="MVCO_Workhorse/outputs/velocityTimeSeries"/>
+                    <sml:destination ref="Velocity_QC_Chain/inputs/velocityTimeSeries"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="Velocity_QC_Chain/outputs/interpolatedVelocityTimeSeries"/>
+                    <sml:destination
+                        ref="VelocityObservableProcess/inputs/interpolatedVelocityTimeSeries"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="Velocity_QC_Chain/outputs/aggregateVelocityFlag"/>
+                    <sml:destination ref="this/outputs/flags/aggregateVelocityFlag"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="Velocity_QC_Chain/outputs/echoIntensityFlag"/>
+                    <sml:destination ref="this/outputs/flags/echoIntensityFlag"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="Velocity_QC_Chain/outputs/correlationCoeffecientFlag"/>
+                    <sml:destination ref="this/outputs/flags/correlationCoeffecientFlag"/>
+                </sml:Link>
+            </sml:connection>
+
+            <!--  VelocityObservableProcess connections -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/waveHeightAll"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/waveHeightAll"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/swell"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/swell"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/windWaves"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/windWaves"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/wavePeriodAll"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/wavePeriodAll"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/swellPeriod"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/swellPeriod"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/windWavePeriod"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/windWavePeriod"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/dominantWaveDirection"/>
+                    <sml:destination
+                        ref="this/outputs/VelocityObsProcessOutputs/dominantWaveDirection"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/swellDirection"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/swellDirection"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/windWaveDirection"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/windWaveDirection"
+                    />
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/topBinHeight"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/topBinHeight"/>
+                </sml:Link>
+            </sml:connection>
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="VelocityObservableProcess/outputs/bottomBinHeight"/>
+                    <sml:destination ref="this/outputs/VelocityObsProcessOutputs/bottomBinHeight"/>
+                </sml:Link>
+            </sml:connection>
+
+        </sml:ConnectionList>
+    </sml:connections>
+
+</sml:AggregateProcess>

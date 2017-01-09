@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+   
+   <!-- -->
+   <include href="Process.rng">
+      <start>
+         <ref name="sml.ProcessGroup"/>
+      </start>
+   </include>
+       
+   <!-- Definition of Physical Component -->
+   <define name="sml.PhysicalComponent">
+      <a:documentation>Physical Component</a:documentation>
+      <element name="sml:PhysicalComponent">
+         <ref name="sml.describedObject"/>
+         <ref name="sml.ProcessContents"/>
+         <ref name="sml.PhysicalContents"/>
+         <ref name="sml.method"/>
+      </element>
+   </define>
+   
+   <!-- Definition of Physical System -->
+   <define name="sml.PhysicalSystem">
+      <a:documentation>Physical System</a:documentation>
+      <element name="sml:PhysicalSystem">
+         <ref name="sml.describedObject"/>
+         <ref name="sml.ProcessContents"/>
+         <ref name="sml.PhysicalContents"/>
+         <optional>
+            <ref name="sml.components"/>
+         </optional>
+         <optional>
+            <ref name="sml.connections"/>
+         </optional>
+      </element>
+   </define>
+   
+   <!-- All Processes -->
+   <define name="sml.ProcessGroup" combine="choice">
+      <choice>
+         <ref name="sml.PhysicalComponent"/>
+         <ref name="sml.PhysicalSystem"/>
+      </choice>
+   </define>
+   
+
+   <!-- Physical Contents -->
+   <define name="sml.PhysicalContents">
+      <optional>
+         <a:documentation>Link to Platform</a:documentation>
+         <element name="sml:attachedTo">
+            <ref name="xlink.hrefWithTitle"/>
+         </element>
+     </optional>
+     <optional>
+        <element name="localReferenceFrame">
+           <ref name="sml.ReferenceFrame"/>
+        </element>     
+     </optional>
+     <zeroOrMore>
+        <element name="sml:temporalReferenceFrame">
+           <ref name="gml.TimeCoordinateSystem" />     
+        </element>
+     </zeroOrMore>
+     <optional>
+        <ref name="sml.position"/>   
+     </optional>
+   </define>
+   
+   <!-- Reference Frame -->
+   <define name="sml.ReferenceFrame">
+      <element name="sml:ReferenceFrame">
+         <element name="sml:origin">
+            <data type="string"/>       
+         </element>
+         <oneOrMore>
+            <element name="sml:axis">
+               <attribute name="sml:name"/>
+               <data type="string"/>           
+            </element>
+         </oneOrMore>           
+      </element>
+   </define>
+   
+   <!-- position -->
+   <define name="sml.position">
+      <element name="sml:position">
+         <optional>
+            <ref name="xlink.roles"/>
+         </optional>
+         <choice>
+            <a:documentation>Inline or By Reference</a:documentation>
+            <ref name="xlink.href"/>
+            <choice>
+               <ref name="swe.Text"/>
+               <ref name="gml.Point"/>
+               <ref name="swe.Vector"/>
+               <ref name="swe.DataRecord"/>
+               <ref name="swe.DataArray"/>
+               <ref name="swe.Matrix"/>
+               <ref name="sml.ProcessGroup"/>
+            </choice>   
+         </choice>
+      </element>
+   </define>
+   
+</grammar>
