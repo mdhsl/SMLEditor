@@ -496,7 +496,6 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .def-icon {
-	margin-left:10px;
 	margin-right:10px;
 }
 
@@ -589,6 +588,7 @@ table.sml-mode-nolabel-vertical-panel {
 
 .section-panel .content {
 	border-left: 2px solid #e7e7e7 !important;
+	margin-bottom: 10px;
 }
 
 /*** HORIZONTAL PANELS ***/
@@ -614,7 +614,7 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .line-generic {
-	border-spacing:5px;
+	/*border-spacing:5px;*/
 }
 .line-generic-panel-before {
 	min-width : 370px;
@@ -648,6 +648,7 @@ table.sml-mode-nolabel-vertical-panel {
 .disclosure-generic .content {
 /*	border-spacing:7px !important;*/
 	margin-left:10px !important;
+	margin-top: 8px;
 }
 
 /** remove disclosure border **/
@@ -703,23 +704,29 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .rng-zeroormore-pattern {
-	margin-top:5px;
-	margin-bottom:5px;
+}
+
+.rng-shift-remove .rng-optional-select-remove {
+	margin-top:2px !important;
 }
 
 .textbox {
 	/* margin-top: 5px; */
     /* margin-bottom: 5px; */
-    padding: 0px 0px !important;
+   /* padding: 0px 0px !important;
     width: 221px;
     background: transparent url(sensormleditor/images/bg.jpg) no-repeat;
     color: #747862;
-    height: 20px;
+    height: 20px;*/
     /* border: 0 !important; */
-    padding: 4px 8px !important;
+    /*padding: 4px 8px !important;
     margin-bottom: 0px;
     border-left:none !important;
-    margin-right:5px;
+    margin-right:5px;*/
+}
+
+.advanced-panel .textbox{
+	width:500px;
 }
 
 input:focus { 
@@ -745,7 +752,7 @@ input:focus {
 }
 
 .rng-shift-remove {
-	margin-left:-25px;
+	margin-left:-22px;
 }
 
 .rng-disclosure >tbody>tr>td{
@@ -789,15 +796,24 @@ input:focus {
 }
 
 .edit-subsection-element-inner-panel {
-	margin-left:8px;
+	margin-top:10px;
+	margin-left:15px;
 }
 
-.edit-subsection-element-panel{
-	margin-top: 10px;
+.edit-subsection-element-panel {
     margin-bottom: 10px;
 }
-    
-.edit-subsection-element-panel .gwt-HTML {
+
+
+.edit-subsection-label-panel {
+	margin-right:10px;
+}    
+
+.edit-section-label-panel {
+	margin-right:10px;
+} 
+
+.edit-subsection-label-panel .gwt-HTML {
 	font-weight: bold;
 }
 
@@ -840,7 +856,6 @@ input:focus {
 }
 
 .description-icon {
-	margin-left:10px;
 	margin-right:10px;
 }
 
@@ -863,4 +878,21 @@ input:focus {
 
 .TimePositionType-panel {
 	border-spacing: 5px;
+}
+
+.Event-panel .gwt-HTML{
+	font-weight: bold;
+}
+
+.Event-panel .TimePositionType-panel{
+	border-spacing: 0px;
+}
+
+.Event-panel  {
+	margin-left:-10px; /* override subsection label margin */
+	margin-right:10px;
+}  
+
+.document-description-panel {
+	margin-right:10px;
 }
