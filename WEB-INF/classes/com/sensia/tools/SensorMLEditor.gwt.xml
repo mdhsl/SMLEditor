@@ -19,6 +19,8 @@
   <inherits name="elemental.Elemental"/>
   <inherits name="com.google.gwt.resources.Resources" />
   <entry-point class='com.sensia.tools.client.SensorMLEditor'/>
+  <inherits name="com.smartgwt.SmartGwt"/>
+  <inherits name="com.smartclient.theme.enterprise.Enterprise"/>
   
   <source path='client'/>
   <source path='shared'/>
