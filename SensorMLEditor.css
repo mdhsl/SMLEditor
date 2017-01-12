@@ -468,12 +468,13 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .chart-panel {
-	width:630px;
-	height:500px;
+	width:calc(100% - 30px) !important;
+	height:calc(100% - 30px) !important;
 	margin-top:10px;
 	margin-left:10px;
 	overflow:hidden !important;
 }
+
 .ontology-icon {
 	margin-left: 15px;	
 }
@@ -914,4 +915,13 @@ input:focus {
 
 .gwt-ListBox {
     width: 200px !important;
+}
+
+.smartgwt-generic-table div {
+    font-size: 15px;
+}
+
+.dialog-datatable{
+}
+.dialog-chart{
 }
