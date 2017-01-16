@@ -539,6 +539,7 @@
    
    <!-- uom -->
    <define name="swe.uom">
+	  <a:documentation>UOM</a:documentation>
       <element name="swe:uom">
          <choice>
             <ref name="xlink.href"/>
@@ -696,7 +697,7 @@
 
     <!-- description -->
    <define name="swe.description">
-      <a:documentation>label</a:documentation>
+      <a:documentation>description</a:documentation>
       <element name="swe:description">
          <data type="string">
             <param name="minLength">1</param>
