@@ -668,7 +668,7 @@ table.sml-mode-nolabel-vertical-panel {
 
 .rng-optional-select-label .gwt-HTML{
 	margin-right: 5px;
-    margin-bottom: 2px;
+    margin-bottom: 2px !important;
     vertical-align: middle !important;
     margin-top: 2px;
 }
