@@ -35,3 +35,15 @@ if (!__gwt_scriptsLoaded['sc/skins/Enterprise/load_skin.js']) {
   __gwt_scriptsLoaded['sc/skins/Enterprise/load_skin.js'] = true;
   document.write('<script src="sensormleditor/sc/skins/Enterprise/load_skin.js"></script>');
 }
+if (!__gwt_scriptsLoaded['scripts/shCore.js']) {
+  __gwt_scriptsLoaded['scripts/shCore.js'] = true;
+  document.write('<script src="sensormleditor/scripts/shCore.js"></script>');
+}
+if (!__gwt_scriptsLoaded['scripts/shBrushJava.js']) {
+  __gwt_scriptsLoaded['scripts/shBrushJava.js'] = true;
+  document.write('<script src="sensormleditor/scripts/shBrushJava.js"></script>');
+}
+if (!__gwt_scriptsLoaded['scripts/shBrushXml.js']) {
+  __gwt_scriptsLoaded['scripts/shBrushXml.js'] = true;
+  document.write('<script src="sensormleditor/scripts/shBrushXml.js"></script>');
+}

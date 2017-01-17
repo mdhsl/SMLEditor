@@ -668,7 +668,7 @@ table.sml-mode-nolabel-vertical-panel {
 
 .rng-optional-select-label .gwt-HTML{
 	margin-right: 5px;
-    margin-bottom: 2px !important;
+    margin-bottom: 5px !important;
     vertical-align: middle !important;
     margin-top: 2px;
 }
@@ -789,6 +789,7 @@ input:focus {
 
 .rng-optional-label{
 	min-width:100px;
+	margin-right: 5px;
 }
 
 .editor .edit-subsection-element-inner-panel {
@@ -804,6 +805,10 @@ input:focus {
 .edit-subsection-label-panel {
 	margin-right:10px;
 }    
+
+.edit-subsection-label-panel .attribute-panel-edit{
+	margin-bottom:0px !important;
+}
 
 .edit-section-label-panel {
 	margin-right:10px;
@@ -907,13 +912,27 @@ input:focus {
 }
 .gwt-TextBox {
 	width:200px !important;
+	height: 23px !important;
+	margin-bottom: 5px;
+}
+
+/** Set the same margin as the listbox margin **/
+.rng-choice-pattern .gwt-TextBox {
+	margin-bottom:5px;
+}
+
+.rng-optional-select-label .gwt-TextBox {
+	margin-bottom:5px;
 }
 
 .gwt-ListBox {
     width: 200px !important;
-    height: 20px;
-    font-size: 16px;
+    height: 23px;
+    font-size: 17px;
+    margin-bottom:5px;
+    padding: 1px 0 0 0; /** margin top for text **/
 }
+
 
 .smartgwt-generic-table div {
     font-size: 15px;
@@ -922,4 +941,36 @@ input:focus {
 .dialog-datatable{
 }
 .dialog-chart{
+}
+
+/** smartgwt status bar**/
+.windowStatusBar {
+	display:none;
+}
+.smartgwt-dialog-save-button {
+	height:45px !important;
+	padding: 5 5 5 5;
+}
+
+.smartgwt-dialog-save-button div{
+	font-size:13px;
+}
+
+.html-pane-code {
+}
+
+.dialog-code {
+	overflow:hidden;
+	margin-left: 0px;
+	margin-top: 0px;
+	width:660px;
+	height:550px;
+}
+
+/** SyntaxHighlight **/
+.syntaxhighlighter {
+  margin: 0em 0em 0em 0em !important;
+  height:100%;
+  /*width: 100% !important;
+  height: calc(100% - 60px) !important;*/
 }

@@ -1,5 +1,5 @@
 function sensormleditor(){
-  var $intern_0 = 'bootstrap', $intern_1 = 'begin', $intern_2 = 'gwt.codesvr.sensormleditor=', $intern_3 = 'gwt.codesvr=', $intern_4 = 'sensormleditor', $intern_5 = 'startup', $intern_6 = 'DUMMY', $intern_7 = 0, $intern_8 = 1, $intern_9 = 'iframe', $intern_10 = 'javascript:""', $intern_11 = 'position:absolute; width:0; height:0; border:none; left: -1000px;', $intern_12 = ' top: -1000px;', $intern_13 = 'CSS1Compat', $intern_14 = '<!doctype html>', $intern_15 = '', $intern_16 = '<html><head><\/head><body><\/body><\/html>', $intern_17 = 'undefined', $intern_18 = 'DOMContentLoaded', $intern_19 = 50, $intern_20 = 'script', $intern_21 = 'javascript', $intern_22 = 'Failed to load ', $intern_23 = 'moduleStartup', $intern_24 = 'scriptTagAdded', $intern_25 = 'moduleRequested', $intern_26 = 'meta', $intern_27 = 'name', $intern_28 = 'sensormleditor::', $intern_29 = '::', $intern_30 = 'gwt:property', $intern_31 = 'content', $intern_32 = '=', $intern_33 = 'gwt:onPropertyErrorFn', $intern_34 = 'Bad handler "', $intern_35 = '" for "gwt:onPropertyErrorFn"', $intern_36 = 'gwt:onLoadErrorFn', $intern_37 = '" for "gwt:onLoadErrorFn"', $intern_38 = '#', $intern_39 = '?', $intern_40 = '/', $intern_41 = 'img', $intern_42 = 'clear.cache.gif', $intern_43 = 'baseUrl', $intern_44 = 'sensormleditor.nocache.js', $intern_45 = 'base', $intern_46 = '//', $intern_47 = 'user.agent', $intern_48 = 'webkit', $intern_49 = 'safari', $intern_50 = 'msie', $intern_51 = 10, $intern_52 = 11, $intern_53 = 'ie10', $intern_54 = 9, $intern_55 = 'ie9', $intern_56 = 8, $intern_57 = 'ie8', $intern_58 = 'gecko', $intern_59 = 'gecko1_8', $intern_60 = 2, $intern_61 = 3, $intern_62 = 4, $intern_63 = 'selectingPermutation', $intern_64 = 'sensormleditor.devmode.js', $intern_65 = '239D995354B93C0F86904D1018EB87DC', $intern_66 = '83D02C000821C0839AAB2C9C5FDF099F', $intern_67 = '88386A3DE64661507B428D6FA652232D', $intern_68 = 'B2EDD6529C8351503F158CDC53C34DD9', $intern_69 = 'BE7D808E4FE46CC7AD393FF1D557C3F5', $intern_70 = ':', $intern_71 = '.cache.js', $intern_72 = 'link', $intern_73 = 'rel', $intern_74 = 'stylesheet', $intern_75 = 'href', $intern_76 = 'head', $intern_77 = 'loadExternalRefs', $intern_78 = 'gwt/clean/clean.css', $intern_79 = 'end', $intern_80 = 'http:', $intern_81 = 'file:', $intern_82 = '_gwt_dummy_', $intern_83 = '__gwtDevModeHook:sensormleditor', $intern_84 = 'Ignoring non-whitelisted Dev Mode URL: ', $intern_85 = ':moduleBase';
+  var $intern_0 = 'bootstrap', $intern_1 = 'begin', $intern_2 = 'gwt.codesvr.sensormleditor=', $intern_3 = 'gwt.codesvr=', $intern_4 = 'sensormleditor', $intern_5 = 'startup', $intern_6 = 'DUMMY', $intern_7 = 0, $intern_8 = 1, $intern_9 = 'iframe', $intern_10 = 'javascript:""', $intern_11 = 'position:absolute; width:0; height:0; border:none; left: -1000px;', $intern_12 = ' top: -1000px;', $intern_13 = 'CSS1Compat', $intern_14 = '<!doctype html>', $intern_15 = '', $intern_16 = '<html><head><\/head><body><\/body><\/html>', $intern_17 = 'undefined', $intern_18 = 'DOMContentLoaded', $intern_19 = 50, $intern_20 = 'script', $intern_21 = 'javascript', $intern_22 = 'Failed to load ', $intern_23 = 'moduleStartup', $intern_24 = 'scriptTagAdded', $intern_25 = 'moduleRequested', $intern_26 = 'meta', $intern_27 = 'name', $intern_28 = 'sensormleditor::', $intern_29 = '::', $intern_30 = 'gwt:property', $intern_31 = 'content', $intern_32 = '=', $intern_33 = 'gwt:onPropertyErrorFn', $intern_34 = 'Bad handler "', $intern_35 = '" for "gwt:onPropertyErrorFn"', $intern_36 = 'gwt:onLoadErrorFn', $intern_37 = '" for "gwt:onLoadErrorFn"', $intern_38 = '#', $intern_39 = '?', $intern_40 = '/', $intern_41 = 'img', $intern_42 = 'clear.cache.gif', $intern_43 = 'baseUrl', $intern_44 = 'sensormleditor.nocache.js', $intern_45 = 'base', $intern_46 = '//', $intern_47 = 'user.agent', $intern_48 = 'webkit', $intern_49 = 'safari', $intern_50 = 'msie', $intern_51 = 10, $intern_52 = 11, $intern_53 = 'ie10', $intern_54 = 9, $intern_55 = 'ie9', $intern_56 = 8, $intern_57 = 'ie8', $intern_58 = 'gecko', $intern_59 = 'gecko1_8', $intern_60 = 2, $intern_61 = 3, $intern_62 = 4, $intern_63 = 'selectingPermutation', $intern_64 = 'sensormleditor.devmode.js', $intern_65 = '37C09687EB0A6B307B6F8F866F8BB091', $intern_66 = '3806F935EE84DB27320446A08508E9CE', $intern_67 = '63B43D7A555B9A8D043BF166A75227D1', $intern_68 = '8CC874AE62AB9F8C87F3509770A58692', $intern_69 = 'C39CCF5B671DABAAC9453D8CEB15D1B9', $intern_70 = ':', $intern_71 = '.cache.js', $intern_72 = 'link', $intern_73 = 'rel', $intern_74 = 'stylesheet', $intern_75 = 'href', $intern_76 = 'head', $intern_77 = 'loadExternalRefs', $intern_78 = 'gwt/clean/clean.css', $intern_79 = 'styles/shCore.css', $intern_80 = 'styles/shThemeDefault.css', $intern_81 = 'end', $intern_82 = 'http:', $intern_83 = 'file:', $intern_84 = '_gwt_dummy_', $intern_85 = '__gwtDevModeHook:sensormleditor', $intern_86 = 'Ignoring non-whitelisted Dev Mode URL: ', $intern_87 = ':moduleBase';
   var $wnd = window;
   var $doc = document;
   sendStats($intern_0, $intern_1);
@@ -375,11 +375,11 @@ function sensormleditor(){
     }
     var strongName;
     try {
-      unflattenKeylistIntoAnswers([$intern_55], $intern_65);
-      unflattenKeylistIntoAnswers([$intern_59], $intern_66);
-      unflattenKeylistIntoAnswers([$intern_57], $intern_67);
-      unflattenKeylistIntoAnswers([$intern_53], $intern_68);
-      unflattenKeylistIntoAnswers([$intern_49], $intern_69);
+      unflattenKeylistIntoAnswers([$intern_59], $intern_65);
+      unflattenKeylistIntoAnswers([$intern_53], $intern_66);
+      unflattenKeylistIntoAnswers([$intern_49], $intern_67);
+      unflattenKeylistIntoAnswers([$intern_57], $intern_68);
+      unflattenKeylistIntoAnswers([$intern_55], $intern_69);
       strongName = answers[computePropValue($intern_47)];
       var idx = strongName.indexOf($intern_70);
       if (idx != -1) {
@@ -409,7 +409,9 @@ function sensormleditor(){
 
     sendStats($intern_77, $intern_1);
     installOneStylesheet($intern_78);
-    sendStats($intern_77, $intern_79);
+    installOneStylesheet($intern_79);
+    installOneStylesheet($intern_80);
+    sendStats($intern_77, $intern_81);
   }
 
   processMetas();
@@ -417,10 +419,10 @@ function sensormleditor(){
   activeModules[$intern_4].moduleBase = sensormleditor.__moduleBase;
   var filename = getCompiledCodeFilename();
   if ($wnd) {
-    var devModePermitted = !!($wnd.location.protocol == $intern_80 || $wnd.location.protocol == $intern_81);
+    var devModePermitted = !!($wnd.location.protocol == $intern_82 || $wnd.location.protocol == $intern_83);
     $wnd.__gwt_activeModules[$intern_4].canRedirect = devModePermitted;
     function supportsSessionStorage(){
-      var key = $intern_82;
+      var key = $intern_84;
       try {
         $wnd.sessionStorage.setItem(key, key);
         $wnd.sessionStorage.removeItem(key);
@@ -432,17 +434,17 @@ function sensormleditor(){
     }
 
     if (devModePermitted && supportsSessionStorage()) {
-      var devModeKey = $intern_83;
+      var devModeKey = $intern_85;
       var devModeUrl = $wnd.sessionStorage[devModeKey];
       if (!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\/.*$/.test(devModeUrl)) {
         if (devModeUrl && (window.console && console.log)) {
-          console.log($intern_84 + devModeUrl);
+          console.log($intern_86 + devModeUrl);
         }
         devModeUrl = $intern_15;
       }
       if (devModeUrl && !$wnd[devModeKey]) {
         $wnd[devModeKey] = true;
-        $wnd[devModeKey + $intern_85] = computeScriptBase();
+        $wnd[devModeKey + $intern_87] = computeScriptBase();
         var devModeScript = $doc.createElement($intern_20);
         devModeScript.src = devModeUrl;
         var head = $doc.getElementsByTagName($intern_76)[$intern_7];
@@ -452,7 +454,7 @@ function sensormleditor(){
     }
   }
   loadExternalStylesheets();
-  sendStats($intern_0, $intern_79);
+  sendStats($intern_0, $intern_81);
   installScript(filename);
   return true;
 }
