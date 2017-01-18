@@ -614,7 +614,7 @@ table.sml-mode-nolabel-vertical-panel {
 	min-width : 370px;
 }
 .line-generic-label-panel-before {
-	min-width : 220px;
+	margin-right:10px;
 }
 .line-generic-definition-panel-before {
 	min-width : 30px;
@@ -797,10 +797,18 @@ input:focus {
 	margin-left:15px;
 }
 
-.editor  .edit-subsection-element-panel {
+.editor .edit-subsection-element-panel {
     margin-bottom: 10px;
 }
 
+.viewer .edit-subsection-element-inner-panel {
+	margin-top:10px;
+	margin-left:15px;
+}
+
+.viewer  .edit-subsection-element-panel {
+    margin-bottom: 10px;
+}
 
 .edit-subsection-label-panel {
 	margin-right:10px;
@@ -957,20 +965,17 @@ input:focus {
 }
 
 .html-pane-code {
+	height:100%;
 }
 
 .dialog-code {
-	overflow:hidden;
-	margin-left: 0px;
-	margin-top: 0px;
-	width:660px;
-	height:550px;
 }
 
 /** SyntaxHighlight **/
 .syntaxhighlighter {
   margin: 0em 0em 0em 0em !important;
   height:100%;
+   height: calc(100% - 60px) !important;
   /*width: 100% !important;
   height: calc(100% - 60px) !important;*/
 }
