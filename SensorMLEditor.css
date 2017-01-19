@@ -556,7 +556,6 @@ table.sml-mode-nolabel-vertical-panel {
 
 .editor {
 	margin-top : 30px;
-	margin-left: 30px;
 }
 /*** HEADER ***/
 
@@ -696,7 +695,6 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .rng-choice-pattern {
-	margin-top:5px;
 	margin-bottom:5px;
 	margin-left:22px;
 }
@@ -705,7 +703,7 @@ table.sml-mode-nolabel-vertical-panel {
 }
 
 .rng-shift-remove .rng-optional-select-remove {
-	margin-top:2px !important;
+	margin-top:1px !important;
 }
 
 .textbox {
@@ -745,12 +743,31 @@ input:focus {
     overflow: auto;
 }
 
+.advanced, .root {
+	margin-left:21px;
+}
+
+.addsection-button {
+	margin-left:6px;
+	margin-right:5px;
+}
+
 .advanced-dialog-dots {
 	cursor:pointer;
 }
 
 .rng-shift-remove {
 	margin-left:-22px;
+	margin-bottom:2px; 
+}
+
+.editor .header-document .rng-shift-remove{
+	margin-left: -13px;
+    margin-right: 8px;
+}
+.rng-disclosure .rng-shift-remove {
+	margin-left:0px !important;
+	margin-top: 3px !important;
 }
 
 .rng-disclosure >tbody>tr>td{
@@ -767,6 +784,7 @@ input:focus {
 .attribute-panel-advanced .gwt-HTML {
 	min-width:100px;
 	margin-bottom:5px;
+	margin-right: 5px;
 }
 
 .attribute-panel-advanced .textbox {
@@ -781,14 +799,17 @@ input:focus {
 
 .advanced-simple-element-panel .gwt-HTML {
 	min-width:100px;
+	margin-right: 5px;
 }
 
 .attribute-panel-edit .gwt-HTML {
 	min-width:100px;
+	margin-right: 5px;
 }
 
 .rng-optional-label{
 	min-width:100px;
+	margin-bottom:5px;
 	margin-right: 5px;
 }
 
@@ -915,6 +936,19 @@ input:focus {
 	margin-right:10px;
 }
 
+
+.keywords-panel .rng-shift-remove{
+	margin-left: 0px !important;
+}
+
+.keyword-label {
+	max-width:600px;
+}
+
+.keywords-panel .textbox {
+	margin-right:5px;
+}
+
 .advanced-simple-element-panel .gwt-TextBox .textbox {
 	width:200px !important;
 }
@@ -953,7 +987,7 @@ input:focus {
 
 /** smartgwt status bar**/
 .windowStatusBar {
-	display:none;
+	display:none !important;
 }
 .smartgwt-dialog-save-button {
 	height:45px !important;
