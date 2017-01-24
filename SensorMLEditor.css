@@ -1013,3 +1013,12 @@ input:focus {
   /*width: 100% !important;
   height: calc(100% - 60px) !important;*/
 }
+
+.table-add-button {
+	width:100px;
+	margin-left:10px;
+	height:40px;
+}
+.smartgwt-generic-table-vlayout {
+	margin-bottom:10px;
+}
