@@ -683,6 +683,31 @@ table.sml-mode-nolabel-vertical-panel {
   margin-right:5px;
 }
 
+.edit-rng-zeroormore-pattern td{
+	vertical-align: top !important;
+}
+
+.edit-rng-zeroormore-pattern td  .rng-optional-select-remove {
+		margin-top: 4px ! important;
+}
+.edit-rng-zeroormore-pattern .rng-shift-remove {
+  margin-right:5px !important;
+  margin-top:3px !important;
+}
+
+.edit-rng-choice td {
+	vertical-align: top !important;
+}
+
+.edit-rng-choice-pattern td {
+	vertical-align: top !important;
+}
+
+.edit-subsection-element-panel .edit-rng-choice-pattern td  .rng-optional-select-remove {
+	margin-top: 14px ! important;
+    margin-right: 0px ! important;;
+}
+
 .rng-optional-pattern {
 	margin-top:5px;
 	margin-bottom:5px;
