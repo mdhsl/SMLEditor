@@ -1,0 +1,27 @@
+/** the main viewer **/
+.viewer {
+
+}
+
+.viewer  div{
+	vertical-align:middle;
+}
+
+.viewer .panel-viewrootheader-title {
+	font-weight: bold;
+	font-size:25px;
+}
+
+.viewer .panel-disclosure-element-section a.header td {
+	vertical-align : middle !important;
+}
+
+.viewer .subsection-inner {
+	padding-top:5px;
+	padding-left:10px;
+	padding-bottom:5px;
+}
+
+.viewer .subsection-header {
+	font-weight: bold;
+}

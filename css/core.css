@@ -1,0 +1,196 @@
+#editor-area {
+	margin-left: -10px;
+    margin-top: -10px;
+}
+
+.viewer-header {
+	background-color:#f5f5f5;
+	position:fixed;
+	width: 100%;
+}
+
+.main-content {
+	overflow:auto;
+	padding: 45px;
+	padding-left: 30px;
+    padding-top: 100px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+}
+
+input:focus { 
+  border-color: rgba(38, 155, 201, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px rgba(38, 155, 201, 0.6);
+  moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px rgba(38, 155, 201, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px rgba(38, 155, 201, 0.6);
+}
+
+.gwt-TextBox {
+    padding: 0px 2px 0px 2px !important;
+}
+
+.gwt-HTML {
+    font-family: Arial Unicode MS, Arial, sans-serif;
+    font-size: small; 
+}
+
+/** Indent and put some margins for disclosure **/
+.gwt-DisclosurePanel .content {
+    border-left: 1px solid #e7e7e7 !important;
+    padding: 10px 0px 10px 22px !important;
+    margin-left: 11px !important;
+}
+
+.file-download {
+	width:300px; 	
+	border: 1px solid #c4b29d;
+}
+
+input.file-upload {
+	width: 300px;
+    border-radius: 0px 10px 10px 0px;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border: 1px solid #c4b29d;
+}
+
+/** Vertical and Horizontal generic panels */
+/** Custom horizontal panel using flowLayout **/
+
+.spacing {
+	padding:2px;
+}
+
+.spacing-top {
+	padding-top:5px;
+}
+
+.spacing-left {
+	padding-left:5px;
+}
+
+.spacing-right {
+	padding-right:5px;
+}
+
+.spacing-bottom {
+	padding-bottom:5px;
+}
+
+.panel-smlhorizontal {
+}
+
+.panel-smlhorizontal-child {
+	display: inline-block;
+    box-sizing: border-box;
+}
+
+.panel-smlvertical {
+}
+
+/*** SECTION ***/
+.panel-disclosure-element-section {
+	margin-left: -5px; /* because of the table built by disclosure*/
+}
+
+/** section header **/
+.panel-disclosure-element-section a.header  .panel-edit-section-element{
+	cursor: hand;
+  	cursor: pointer;
+  	font-weight:bold;
+}
+
+.panel-disclosure-element-section a.header  .icons-definition{ 
+	margin-left:10px;
+	margin-right:10px;
+}
+
+/** Abstract line **/
+.panel-abstract-generic-line .before{
+	min-width: 370px;
+}
+
+/** dots dots dots button to open a popup **/
+.icons-advanced {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url(../sensormleditor/images/advanced.png);
+  cursor: hand;
+  cursor: pointer;
+}
+
+.link-icon-panel {
+	background: url(../sensormleditor/images/arrow-right.png) no-repeat;
+    width: 25px;
+    height: 9px;
+}
+
+.add-section-button {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url(../sensormleditor/images/add-icon-new.png);
+  cursor: hand;
+  cursor: pointer;
+}
+
+.remove-button {
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	background-image: url(../sensormleditor/images/remove-icon-new.png);
+	cursor: hand;
+	cursor: pointer;
+}
+
+.shift-remove {
+	margin-left:-22px;
+	margin-bottom:2px; 
+}
+
+.add-button {
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	background-image: url(../sensormleditor/images/add-icon-new.png);
+	cursor: hand;
+	cursor: pointer;
+}
+.remove-button {
+	
+}
+
+/* smartgwt status bar*/
+.windowStatusBar {
+	display:none;
+}
+
+.smartgwt-dialog-save-button {
+	height:45px !important;
+	padding: 5 5 5 5;
+}
+
+.smartgwt-dialog-save-button div{
+	font-size:13px;
+}
+
+.dialog-main {
+	overflow:auto;
+	margin-left: 10px;
+	margin-top: 10px;
+	width:660px;
+	height:550px;
+}
+
+.dialog-main .root {
+	width:500px;
+	padding-left:10px;
+}
+

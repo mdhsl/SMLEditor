@@ -1,0 +1,43 @@
+.editor {
+	
+}
+
+.editor  div{
+	vertical-align:bottom;
+}
+
+.editor .panel-disclosure-element-section a.header td {
+	vertical-align : bottom !important;
+}
+
+.editor .subsection-inner {
+	padding:10px;
+}
+
+.editor .spacing {
+	padding:4px;
+}
+
+/* vertical align to the middle*/
+
+.editor div.link-icon-panel {
+	margin-bottom:5px; 
+}
+
+.editor .section-panel .header .icons-advanced {
+    margin-bottom: 3px;
+}
+
+.editor .valign-middle div {
+	vertical-align: middle;
+}
+
+.editor .panel-abstract-generic-line  div{
+	vertical-align: middle;
+}
+
+/**** END Align ****/
+
+.editor .connection .gwt-TextBox {
+    width:400px;
+}
